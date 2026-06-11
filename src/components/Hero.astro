@@ -208,11 +208,9 @@
   function initExtremeInterface() {
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-    // 1. ESTADO CERO
     gsap.set(['.js-top-tab', '.js-main-frame', '.js-bottom-tab', '.js-character', '.js-hero-text', '.js-center-details', '.js-right-panel-text', '.js-tv-widget'], { opacity: 0 });
     gsap.set('.js-main-frame', { scale: 0.9, rotationX: 5 }); 
     
-    // 2. COREOGRAFÍA DE IMPACTO
     tl
       .to('.js-main-frame', { opacity: 1, scale: 1, rotationX: 0, duration: 1, ease: 'expo.out' })
       .to('.js-top-tab', { opacity: 1, y: 0, duration: 0.6, ease: 'back.out(1.5)' }, '-=0.6')
@@ -230,7 +228,6 @@
         { opacity: 1, scale: 1, rotation: 0, duration: 0.8, ease: 'elastic.out(1.2, 0.5)' }, '-=0.6'
       );
 
-    // 3. PARALLAX
     const stage = document.querySelector('.group\\/stage') as HTMLElement;
     if(stage) {
       stage.addEventListener('mousemove', (e) => {
