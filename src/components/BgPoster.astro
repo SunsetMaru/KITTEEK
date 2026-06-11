@@ -1,0 +1,25 @@
+---
+// src/components/BgPoster.astro
+const { 
+  posClasses,
+  bgClass,
+  headerText,
+  headerBgClass = "bg-white text-black",
+  imgSrc,
+  imgClasses = "",
+  containerBg = "bg-black",
+  footerText
+} = Astro.props;
+---
+
+<div class={`bg-poster-grid absolute w-44 md:w-56 aspect-[3/4] border-4 border-black text-black p-2 flex flex-col shadow-[8px_8px_0px_rgba(0,0,0,0.5)] ${posClasses} ${bgClass}`}>
+  <div class={`text-[9px] shrink-0 font-display font-black border-2 border-black text-center py-0.5 uppercase tracking-tighter ${headerBgClass}`}>
+    {headerText}
+  </div>
+  <div class={`relative flex-grow overflow-hidden border border-black my-1 ${containerBg}`}>
+    <img src={imgSrc} class={`absolute inset-0 w-full h-full object-cover ${imgClasses}`}>
+  </div>
+  <div class="text-[6px] shrink-0 tracking-widest text-center bg-black text-white font-mono py-0.5">
+    {footerText}
+  </div>
+</div>

@@ -1,0 +1,46 @@
+---
+// src/components/Ticker.astro
+interface Props {
+  id: string;
+  variant: 'orange' | 'darkCyan';
+  trackClass: string;
+  text: string; // <-- Ahora recibimos el texto aquí
+}
+
+const { id, variant, trackClass, text } = Astro.props;
+
+const baseStyles = "absolute w-[350vw] font-display font-black uppercase flex items-center overflow-hidden z-20 shadow-[0_15px_35px_rgba(0,0,0,0.7)] opacity-0 transform";
+
+const variants = {
+  orange: "h-12 bg-[#EE8027] text-[#0b0b0d] text-sm tracking-wider -rotate-[7deg] skew-x-[12deg]",
+  darkCyan: "h-14 bg-[#0b0b0d] border-y-2 border-[#64bbb3] text-[#64bbb3] text-xs tracking-widest rotate-[10deg] -skew-x-[15deg]"
+};
+
+const currentVariantClass = variants[variant];
+---
+
+<div id={id} class={`${baseStyles} ${currentVariantClass}`}>
+  <div class={`${trackClass} flex whitespace-nowrap items-center min-w-[200%]`}>
+    
+    <div class="ticker-group flex items-center gap-8 md:gap-10 px-4 shrink-0">
+      <span>{text}</span>
+    </div>
+
+    <div class="ticker-group flex items-center gap-8 md:gap-10 px-4 shrink-0" aria-hidden="true">
+      <span>{text}</span>
+    </div>
+
+    <div class="ticker-group flex items-center gap-8 md:gap-10 px-4 shrink-0" aria-hidden="true">
+      <span>{text}</span>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  .ticker-group :global(span) {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    color: inherit !important;
+  }
+</style>

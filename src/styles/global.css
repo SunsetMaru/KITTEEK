@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'KitteekSyne', system-ui, sans-serif;
+  --font-mono: 'KitteekMono', monospace; /* FIX: Alineado con el nombre real del font-face */
+}
+
+@font-face {
+  font-family: 'KitteekSyne';
+  src: url('/ASSETS/FONTS/Syne/static/Syne-ExtraBold.ttf') format('truetype'),
+       url('/ASSETS/FONTS/Syne/static/Syne-Bold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KitteekMono';
+  src: url('/ASSETS/FONTS/JetBrains_Mono/static/JetBrainsMono-Bold.ttf') format('truetype'),
+       url('/ASSETS/FONTS/JetBrains_Mono/static/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.carousel-poster {
+  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.1s ease;
+}
+
+.poster-header {
+  min-height: 48px;           /* Altura fija */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2px 4px;
+}
+
+.poster-header span {
+  line-height: 1.05;
+}
+
+/* Ajuste específico para "DEAD OR ALIVE" */
+.poster-header span.text-\[21px\] {
+  font-size: 21px;
+}
+
+/* Asegurar que la imagen siempre tenga el mismo espacio */
+.poster-img-container {
+  flex-grow: 1;
+  min-height: 0; /* importante para flex */
+}

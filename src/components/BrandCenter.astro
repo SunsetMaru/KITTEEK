@@ -1,0 +1,24 @@
+---
+// src/components/BrandCenter.astro
+---
+
+<div class="absolute inset-0 z-20 flex items-center justify-center overflow-hidden">
+  
+  <div id="character-container" class="absolute inset-0 z-30 w-full h-full flex items-center justify-center opacity-0 pointer-events-none">
+    <img id="glitch-logo-1" src="/ASSETS/IMG/KITTEK-LOGO1.png" alt="Logo Core 1" class="absolute max-w-xl w-[80vw] h-auto object-contain filter drop-shadow-[0_0_30px_rgba(238,128,39,0.5)]" />
+    <img id="glitch-logo-2" src="/ASSETS/IMG/KITTEK-LOGO2.png" alt="Logo Core 2" class="absolute max-w-xl w-[80vw] h-auto object-contain opacity-0 filter invert drop-shadow-[0_0_30px_rgba(100,187,179,0.5)]" />
+  </div>
+
+  <div id="brand-layer" class="absolute right-[5%] bottom-[20%] z-40 flex flex-col items-end opacity-0 translate-x-10 pointer-events-none">
+    <svg class="w-5 h-5 text-[#EE8027]/50 mb-2 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="12" y1="1" x2="12" y2="23"></line><line x1="1" y1="12" x2="23" y2="12"></line>
+    </svg>
+    <div class="bg-[#EACCB0] text-[#0b0b0d] font-display font-black text-3xl px-4 py-1 uppercase tracking-tighter shadow-2xl">
+      KITTEEK
+    </div>
+    <div class="bg-[#EE8027] text-[#0b0b0d] font-mono font-bold text-[9px] px-2 py-0.5 mt-1 uppercase tracking-[0.2em]">
+      STUDIO_CORE_ACTIVE
+    </div>
+  </div>
+  
+</div>

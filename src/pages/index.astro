@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import IntroPreloader from '../components/IntroPreloader.astro';
+import AboutUs from '../components/AboutUs.astro';
+import Servicios from '../components/Servicios.astro';
+import Hero from '../components/Hero.astro';
+import Portafolio from '../components/Portafolio.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitteek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#050505] text-white overflow-hidden min-h-screen relative font-mono select-none">
+
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <div class="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8cGF0aCBkPSJNMCAwaDR2NEgwem0xIDFoMnYySDF6IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAuNSIvPjwvc3ZnPg==')]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(234,204,176,0.03)_1px,transparent_1px)] bg-[size:100%_4px]"></div>
+  </div>
+
+  <div id="pixi-bg" class="fixed inset-0 z-0 pointer-events-none opacity-20"></div>
+  
+  <IntroPreloader />
+  
+  <main id="main-content" class="relative z-20 opacity-0 pointer-events-none">
+    <Hero />
+    <Servicios />
+    <Portafolio />
+    <AboutUs />
+  </main>
+
+  <script>
+    import "../JS/main.js";
+  </script>
+</body>
+</html>

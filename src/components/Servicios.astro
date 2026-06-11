@@ -1,0 +1,480 @@
+---
+// Servicios.astro - ARCHIVO MODULAR
+const servicios = [
+  {
+    id: "SRV-001",
+    titulo: "BRANDING_SYS",
+    tag: "IDENTIDAD",
+    color: "#EE8027",
+    img: "/ASSETS/IMG/CHAR1.png", 
+    specs: "DURACIÓN: 3-4 SEMANAS | FORMATO: VECTOR/DAT",
+    review: "Análisis de espectro completo. Forjamos la identidad visual de tu corporación desde cero. Logos, paletas de colores neón y manuales de marca que sobreviven a cualquier pulso electromagnético."
+  },
+  {
+    id: "SRV-002",
+    titulo: "WEB_DEV",
+    tag: "CÓDIGO",
+    color: "#64bbb3",
+    img: "/ASSETS/IMG/CHAR2.png",
+    specs: "DURACIÓN: 4-6 SEMANAS | STACK: ASTRO/TAILWIND",
+    review: "Desarrollo de interfaces de alta velocidad. Optimizamos el DOM como si fuera cromo implantado. Sitios web ultrarrápidos, modulares y listos para resistir tráfico masivo en la red."
+  },
+  {
+    id: "SRV-003",
+    titulo: "MOTION_GFX",
+    tag: "ANIMACIÓN",
+    color: "#EACCB0",
+    img: "/ASSETS/IMG/CHAR5.png",
+    specs: "DURACIÓN: 2-3 SEMANAS | FPS: 60/120",
+    review: "Cinemáticas y animaciones que rompen la retina. Damos vida a elementos estáticos con transiciones fluidas y simulaciones físicas. Puro dinamismo visual para tus campañas."
+  },
+  {
+    id: "SRV-004",
+    titulo: "UI/UX_DESIGN",
+    tag: "INTERFAZ",
+    color: "#EE8027",
+    img: "/ASSETS/IMG/CHAR4.png",
+    specs: "DURACIÓN: 2-4 SEMANAS | PROTOTIPO: FIGMA",
+    review: "Arquitectura de la información para el usuario del mañana. Diseñamos flujos de navegación intuitivos y wireframes tácticos para que la interacción con tu sistema sea letal e impecable."
+  },
+  {
+    id: "SRV-005",
+    titulo: "SEO_OPS",
+    tag: "SISTEMAS",
+    color: "#64bbb3",
+    img: "/ASSETS/IMG/CHAR3.png",
+    specs: "DURACIÓN: CONTINUA | RATING: CLASE S",
+    review: "Infiltración en los algoritmos de búsqueda. Posicionamos tu señal en lo más alto de los servidores globales mediante tácticas avanzadas de optimización y metadatos."
+  }
+];
+---
+
+<section id="services-deck" class="relative w-full font-sans select-none pt-24 pb-32">
+
+  <div class="relative z-20 w-full max-w-[1500px] mx-auto px-4 md:px-8 xl:px-0 mb-20 text-center">
+    <span class="text-[#EE8027] font-mono text-[10px] font-black tracking-[0.3em] mb-3 uppercase block">
+      // BASE_DE_DATOS_CENTRAL
+    </span>
+    <h2 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] text-white drop-shadow-[4px_4px_0px_#0a0a0a]">
+      SERVICIOS<span class="text-transparent text-stroke-2 stroke-accent">.EXE</span>
+    </h2>
+    <p class="text-white/40 font-mono text-xs md:text-sm max-w-lg mx-auto mt-6">
+      > HAZ CLIC EN UN CARTUCHO PARA EXTRAER LA CINTA Y LEER LOS DATOS. CLIC DE NUEVO PARA CERRARLO.
+    </p>
+  </div>
+
+  <div class="relative w-full overflow-x-hidden py-10 perspective-container">
+    <div id="cassette-track" class="flex w-max">
+      
+      <div class="flex gap-24 md:gap-32 pr-24 md:pr-32 shrink-0 px-4 md:px-8 xl:px-[calc((100vw-1500px)/2)]">
+        {servicios.map((servicio, index) => (
+          <article class="cassette-scene group cursor-pointer shrink-0 transition-z duration-300 relative w-[180px] md:w-[220px]">
+            
+            <div class="cassette-box relative w-full h-[280px] md:h-[340px] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+              <div class="box-back absolute inset-0 bg-[#050505] border-[2px] border-white/10 z-0 shadow-2xl"></div>
+
+              <div class="tape-slide absolute inset-0 z-10 transition-transform duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+                <div class="absolute top-1/2 left-1/2 w-[260px] h-[160px] md:w-[320px] md:h-[200px] -translate-x-1/2 -translate-y-1/2 -rotate-90 bg-[#1a1a1a] rounded-lg border-[3px] border-[#0f0f0f] shadow-[inset_0_0_15px_#000,5px_5px_15px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col justify-between">
+                  <div class="absolute inset-0 opacity-30 pointer-events-none mix-blend-overlay" style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px); background-size: 8px 8px;"></div>
+                  <div class="absolute top-1.5 left-1.5 w-2 h-2 rounded-full bg-black flex items-center justify-center border border-white/10 z-20"><div class="w-full h-[1px] bg-white/30 transform rotate-45"></div></div>
+                  <div class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-black flex items-center justify-center border border-white/10 z-20"><div class="w-full h-[1px] bg-white/30 transform -rotate-12"></div></div>
+                  <div class="absolute bottom-1.5 left-1.5 w-2 h-2 rounded-full bg-black flex items-center justify-center border border-white/10 z-20"><div class="w-full h-[1px] bg-white/30 transform rotate-90"></div></div>
+                  <div class="absolute bottom-1.5 right-1.5 w-2 h-2 rounded-full bg-black flex items-center justify-center border border-white/10 z-20"><div class="w-full h-[1px] bg-white/30 transform rotate-[120deg]"></div></div>
+
+                  <div class="absolute top-[12%] bottom-[22%] left-[12%] right-[12%] bg-[#e0e0e0] rounded-sm z-10 flex flex-col p-2 md:p-3 border border-white/50 shadow-inner overflow-hidden">
+                    <img src={servicio.img} alt="Character" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale-[40%] pointer-events-none z-0" />
+                    <div class="relative z-10 flex justify-between items-start border-b-2 border-black/80 pb-1 mb-2">
+                       <div class="flex flex-col">
+                         <span class="text-black font-black text-sm md:text-base leading-none uppercase tracking-tighter" style={`color: ${servicio.color}; text-shadow: 1px 1px 0px #fff;`}>{servicio.titulo.split('_')[0]}</span>
+                         <span class="text-black/80 font-bold text-[8px] md:text-[10px] leading-none uppercase bg-white/50 inline-block px-1 w-max">{servicio.titulo.split('_')[1] || 'SYS'}</span>
+                       </div>
+                       <div class="flex flex-col items-end bg-white/70 p-0.5 rounded-sm">
+                         <span class="text-[#c13a3a] border border-[#c13a3a] px-1 text-[7px] font-black uppercase mb-0.5">MUTE</span>
+                         <span class="text-[#c13a3a] text-[9px] font-black uppercase">A SIDE</span>
+                       </div>
+                    </div>
+
+                    <div class="relative z-10 w-[80%] mx-auto h-[35px] md:h-[45px] bg-[#111] rounded-3xl mt-auto mb-2 flex items-center justify-between px-2 md:px-4 border-2 border-gray-400 shadow-[inset_0_4px_10px_#000]">
+                       <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center border border-gray-400 shadow-sm"><div class="w-3 h-3 md:w-4 md:h-4 bg-[#111] rounded-full shadow-[inset_0_0_3px_#fff] flex items-center justify-center relative"><div class="w-[2px] h-full bg-white/50 absolute"></div><div class="w-full h-[2px] absolute bg-white/50"></div></div></div>
+                       <div class="flex-1 h-full bg-black/60 border-x border-white/10 mx-2 flex items-center justify-center overflow-hidden relative"><div class="w-[90%] h-4 bg-[#2b1b11] opacity-60 shadow-[inset_0_2px_4px_#000]"></div></div>
+                       <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center border border-gray-400 shadow-sm"><div class="w-3 h-3 md:w-4 md:h-4 bg-[#111] rounded-full shadow-[inset_0_0_3px_#fff] flex items-center justify-center relative"><div class="w-[2px] h-full bg-white/50 absolute"></div><div class="w-full h-[2px] absolute bg-white/50"></div></div></div>
+                    </div>
+
+                    <div class="relative z-10 w-full overflow-hidden text-ellipsis whitespace-nowrap text-[7px] md:text-[9px] font-mono text-black font-bold opacity-90 tracking-tight bg-white/50 px-1">
+                      1.{servicio.titulo} 2.SYSTEM_OVERRIDE
+                    </div>
+                  </div>
+
+                  <div class="absolute bottom-0 left-[15%] right-[15%] h-[18%] bg-[#0f0f0f] border-t-2 border-x-2 border-white/5 rounded-t-xl z-10 flex justify-center items-center gap-4 px-2 shadow-[-5px_-5px_15px_rgba(0,0,0,0.6)]">
+                     <div class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-black shadow-[inset_0_2px_5px_#000] border border-white/5 relative"><div class="absolute inset-[3px] rounded-full bg-[#111] border border-white/10"></div></div>
+                     <div class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-black shadow-[inset_0_2px_5px_#000] border border-white/5 relative"><div class="absolute inset-[3px] rounded-full bg-[#111] border border-white/10"></div></div>
+                  </div>
+                  
+                  <div class="absolute bottom-2 left-3 w-4 h-2 md:w-5 md:h-2.5 bg-black rounded-sm border border-white/10 z-10 shadow-inner"></div>
+                  <div class="absolute bottom-2 right-3 w-4 h-2 md:w-5 md:h-2.5 bg-black rounded-sm border border-white/10 z-10 shadow-inner"></div>
+                </div>
+              </div>
+
+              <div class="box-front absolute inset-0 bg-[#111] border-r-2 border-b-2 border-white/20 overflow-hidden z-20 pointer-events-none">
+                 <div class="absolute inset-0 opacity-40 mix-blend-luminosity grayscale">
+                    <div class="w-full h-full bg-[#222]" style={`background-image: radial-gradient(circle at center, ${servicio.color}40, transparent)`}></div>
+                    <img src={servicio.img} alt="Cover" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-50" />
+                 </div>
+                 <div class="absolute inset-0 bg-[radial-gradient(black_1px,transparent_1px)] [background-size:4px_4px] opacity-60"></div>
+                 <div class="absolute inset-0 mix-blend-multiply opacity-80" style={`background-color: ${servicio.color};`}></div>
+                 
+                 <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-50"></div>
+                 
+                 <div class="relative z-30 p-4 h-full flex flex-col justify-end">
+                   <div>
+                      <h3 class="text-3xl md:text-4xl font-black text-white tracking-tighter leading-none uppercase drop-shadow-[2px_2px_0px_#000]">
+                        {servicio.titulo.split('_')[0]}<br/>
+                        <span class="text-[#111]" style={`-webkit-text-stroke: 1px ${servicio.color};`}>{servicio.titulo.split('_')[1] || ''}</span>
+                      </h3>
+                   </div>
+                 </div>
+              </div>
+
+              <div class="box-spine absolute top-0 w-[40px] h-full bg-[#151515] border-y-[2px] border-l-[2px] border-white/20 z-30 flex flex-col justify-between items-center py-4">
+                <div class="w-6 h-6 border border-white/20 flex items-center justify-center bg-black">
+                  <span class="text-white text-[8px] font-mono">{index + 1}</span>
+               </div>
+                <div class="transform -rotate-90 text-[10px] font-mono text-white font-black tracking-widest whitespace-nowrap w-[200px] text-center" style={`color: ${servicio.color};`}>
+                  {servicio.titulo}
+                </div>
+                <div class="w-4 h-6 border-b-2 border-white/30"></div>
+              </div>
+            </div>
+
+            <div class="service-info absolute top-0 left-[190%] md:left-[210%] w-[280px] sm:w-[340px] md:w-[400px] h-full invisible opacity-0 pointer-events-none">
+              
+              <div class="hidden md:block absolute top-[10%] -left-[40px] w-[40px] h-[80%] border-y-[2px] border-r-[2px] border-white/5 bg-[#050505]/80 backdrop-blur-sm z-0" style={`border-right-color: ${servicio.color}`}></div>
+
+              <div class="bg-[#050505] w-full h-full border-[1px] border-white/10 relative shadow-[30px_10px_50px_rgba(0,0,0,0.95)] flex flex-col overflow-hidden z-10">
+                
+                <div class="h-1.5 w-full flex">
+                  <div class="w-1/3 h-full bg-white/20"></div>
+                  <div class="w-2/3 h-full" style={`background-color: ${servicio.color}`}></div>
+                </div>
+
+                <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none z-0"></div>
+                
+                <div class="p-5 md:p-6 flex flex-col h-full relative z-10">
+                  
+                  <div class="flex justify-between items-center border-b border-white/10 pb-2 mb-4">
+                    <span class="text-[8px] font-mono text-white/50 tracking-[0.2em] uppercase">SYS_FILE // {servicio.id}</span>
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-[8px] font-mono animate-pulse" style={`color: ${servicio.color}`}>ONLINE</span>
+                      <div class="w-1.5 h-1.5 rounded-full shadow-[0_0_5px_currentColor]" style={`background-color: ${servicio.color}; color: ${servicio.color}`}></div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start justify-between mb-5">
+                    <div>
+                      <h3 class="text-3xl md:text-4xl font-black text-white tracking-tighter uppercase leading-none drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                        {servicio.titulo.split('_')[0]}<br/>
+                        <span class="text-transparent drop-shadow-none" style={`-webkit-text-stroke: 1px ${servicio.color};`}>{servicio.titulo.split('_')[1] || 'SYS'}</span>
+                      </h3>
+                    </div>
+                  </div>
+                  
+                  <div class="grid grid-cols-2 gap-3 mb-5">
+                    <div class="bg-[#111] p-2.5 border-l-[3px] shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]" style={`border-color: ${servicio.color}`}>
+                      <span class="block text-[7px] text-white/40 font-mono mb-1 uppercase tracking-widest">CATEGORÍA</span>
+                      <span class="text-[10px] text-white font-mono font-bold tracking-wider uppercase">{servicio.tag}</span>
+                    </div>
+                    <div class="bg-[#111] p-2.5 border border-white/5 shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]">
+                      <span class="block text-[7px] text-white/40 font-mono mb-1 uppercase tracking-widest">DATA_SPECS</span>
+                      <span class="text-[9px] text-white/80 font-mono">{servicio.specs.split(' | ')[0]}</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-grow border-t border-white/10 pt-4 relative">
+                    <div class="absolute left-0 top-4 w-[2px] h-[50%] bg-gradient-to-b to-transparent" style={`from: ${servicio.color}`}></div>
+                    <p class="text-xs md:text-sm text-white/80 font-sans leading-relaxed text-left pl-3 opacity-90">
+                      {servicio.review}
+                    </p>
+                  </div>
+
+                  <div class="mt-auto pt-4 flex justify-between items-end border-t border-white/5">
+                    <div class="w-[60%] h-3 bg-[repeating-linear-gradient(90deg,#fff,#fff_1.5px,transparent_1.5px,transparent_3px)] opacity-20"></div>
+                    <span class="text-[7px] font-mono text-white/30 uppercase tracking-widest">END_OF_RECORD</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </div>
+
+      <div class="flex gap-24 md:gap-32 pr-24 md:pr-32 shrink-0 px-4 md:px-8 xl:px-[calc((100vw-1500px)/2)]" aria-hidden="true">
+        {servicios.map((servicio, index) => (
+          <article class="cassette-scene group cursor-pointer shrink-0 transition-z duration-300 relative w-[180px] md:w-[220px]">
+            
+            <div class="cassette-box relative w-full h-[280px] md:h-[340px] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+              <div class="box-back absolute inset-0 bg-[#050505] border-[2px] border-white/10 z-0 shadow-2xl"></div>
+              <div class="tape-slide absolute inset-0 z-10 transition-transform duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+                <div class="absolute top-1/2 left-1/2 w-[260px] h-[160px] md:w-[320px] md:h-[200px] -translate-x-1/2 -translate-y-1/2 -rotate-90 bg-[#1a1a1a] rounded-lg border-[3px] border-[#0f0f0f] shadow-[inset_0_0_15px_#000,5px_5px_15px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col justify-between">
+                  <div class="absolute inset-0 opacity-30 pointer-events-none mix-blend-overlay" style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px); background-size: 8px 8px;"></div>
+                  <div class="absolute top-1.5 left-1.5 w-2 h-2 rounded-full bg-black flex items-center justify-center border border-white/10 z-20"><div class="w-full h-[1px] bg-white/30 transform rotate-45"></div></div>
+                  <div class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-black flex items-center justify-center border border-white/10 z-20"><div class="w-full h-[1px] bg-white/30 transform -rotate-12"></div></div>
+                  <div class="absolute bottom-1.5 left-1.5 w-2 h-2 rounded-full bg-black flex items-center justify-center border border-white/10 z-20"><div class="w-full h-[1px] bg-white/30 transform rotate-90"></div></div>
+                  <div class="absolute bottom-1.5 right-1.5 w-2 h-2 rounded-full bg-black flex items-center justify-center border border-white/10 z-20"><div class="w-full h-[1px] bg-white/30 transform rotate-[120deg]"></div></div>
+                  <div class="absolute top-[12%] bottom-[22%] left-[12%] right-[12%] bg-[#e0e0e0] rounded-sm z-10 flex flex-col p-2 md:p-3 border border-white/50 shadow-inner overflow-hidden">
+                    <img src={servicio.img} alt="Character" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale-[40%] pointer-events-none z-0" />
+                    <div class="relative z-10 flex justify-between items-start border-b-2 border-black/80 pb-1 mb-2">
+                       <div class="flex flex-col">
+                         <span class="text-black font-black text-sm md:text-base leading-none uppercase tracking-tighter" style={`color: ${servicio.color}; text-shadow: 1px 1px 0px #fff;`}>{servicio.titulo.split('_')[0]}</span>
+                         <span class="text-black/80 font-bold text-[8px] md:text-[10px] leading-none uppercase bg-white/50 inline-block px-1 w-max">{servicio.titulo.split('_')[1] || 'SYS'}</span>
+                       </div>
+                       <div class="flex flex-col items-end bg-white/70 p-0.5 rounded-sm">
+                         <span class="text-[#c13a3a] border border-[#c13a3a] px-1 text-[7px] font-black uppercase mb-0.5">MUTE</span>
+                         <span class="text-[#c13a3a] text-[9px] font-black uppercase">A SIDE</span>
+                       </div>
+                    </div>
+                    <div class="relative z-10 w-[80%] mx-auto h-[35px] md:h-[45px] bg-[#111] rounded-3xl mt-auto mb-2 flex items-center justify-between px-2 md:px-4 border-2 border-gray-400 shadow-[inset_0_4px_10px_#000]">
+                       <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center border border-gray-400 shadow-sm"><div class="w-3 h-3 md:w-4 md:h-4 bg-[#111] rounded-full shadow-[inset_0_0_3px_#fff] flex items-center justify-center relative"><div class="w-[2px] h-full bg-white/50 absolute"></div><div class="w-full h-[2px] absolute bg-white/50"></div></div></div>
+                       <div class="flex-1 h-full bg-black/60 border-x border-white/10 mx-2 flex items-center justify-center overflow-hidden relative"><div class="w-[90%] h-4 bg-[#2b1b11] opacity-60 shadow-[inset_0_2px_4px_#000]"></div></div>
+                       <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white flex items-center justify-center border border-gray-400 shadow-sm"><div class="w-3 h-3 md:w-4 md:h-4 bg-[#111] rounded-full shadow-[inset_0_0_3px_#fff] flex items-center justify-center relative"><div class="w-[2px] h-full bg-white/50 absolute"></div><div class="w-full h-[2px] absolute bg-white/50"></div></div></div>
+                    </div>
+                    <div class="relative z-10 w-full overflow-hidden text-ellipsis whitespace-nowrap text-[7px] md:text-[9px] font-mono text-black font-bold opacity-90 tracking-tight bg-white/50 px-1">
+                      1.{servicio.titulo} 2.SYSTEM_OVERRIDE
+                    </div>
+                  </div>
+                  <div class="absolute bottom-0 left-[15%] right-[15%] h-[18%] bg-[#0f0f0f] border-t-2 border-x-2 border-white/5 rounded-t-xl z-10 flex justify-center items-center gap-4 px-2 shadow-[-5px_-5px_15px_rgba(0,0,0,0.6)]">
+                     <div class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-black shadow-[inset_0_2px_5px_#000] border border-white/5 relative"><div class="absolute inset-[3px] rounded-full bg-[#111] border border-white/10"></div></div>
+                     <div class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-black shadow-[inset_0_2px_5px_#000] border border-white/5 relative"><div class="absolute inset-[3px] rounded-full bg-[#111] border border-white/10"></div></div>
+                  </div>
+                  <div class="absolute bottom-2 left-3 w-4 h-2 md:w-5 md:h-2.5 bg-black rounded-sm border border-white/10 z-10 shadow-inner"></div>
+                  <div class="absolute bottom-2 right-3 w-4 h-2 md:w-5 md:h-2.5 bg-black rounded-sm border border-white/10 z-10 shadow-inner"></div>
+                </div>
+              </div>
+              <div class="box-front absolute inset-0 bg-[#111] border-r-2 border-b-2 border-white/20 overflow-hidden z-20 pointer-events-none">
+                 <div class="absolute inset-0 opacity-40 mix-blend-luminosity grayscale">
+                    <div class="w-full h-full bg-[#222]" style={`background-image: radial-gradient(circle at center, ${servicio.color}40, transparent)`}></div>
+                    <img src={servicio.img} alt="Cover" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-50" />
+                 </div>
+                 <div class="absolute inset-0 bg-[radial-gradient(black_1px,transparent_1px)] [background-size:4px_4px] opacity-60"></div>
+                 <div class="absolute inset-0 mix-blend-multiply opacity-80" style={`background-color: ${servicio.color};`}></div>
+                 <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-50"></div>
+                 <div class="relative z-30 p-4 h-full flex flex-col justify-end">
+                   <div>
+                     <h3 class="text-3xl md:text-4xl font-black text-white tracking-tighter leading-none uppercase drop-shadow-[2px_2px_0px_#000]">
+                       {servicio.titulo.split('_')[0]}<br/><span class="text-[#111]" style={`-webkit-text-stroke: 1px ${servicio.color};`}>{servicio.titulo.split('_')[1] || ''}</span>
+                     </h3>
+                   </div>
+                 </div>
+              </div>
+              <div class="box-spine absolute top-0 w-[40px] h-full bg-[#151515] border-y-[2px] border-l-[2px] border-white/20 z-30 flex flex-col justify-between items-center py-4">
+                <div class="w-6 h-6 border border-white/20 flex items-center justify-center bg-black"><span class="text-white text-[8px] font-mono">{index + 1}</span></div>
+                <div class="transform -rotate-90 text-[10px] font-mono text-white font-black tracking-widest whitespace-nowrap w-[200px] text-center" style={`color: ${servicio.color};`}>{servicio.titulo}</div>
+                <div class="w-4 h-6 border-b-2 border-white/30"></div>
+              </div>
+            </div>
+
+            <div class="service-info absolute top-0 left-[190%] md:left-[210%] w-[280px] sm:w-[340px] md:w-[400px] h-full invisible opacity-0 pointer-events-none">
+              <div class="hidden md:block absolute top-[10%] -left-[40px] w-[40px] h-[80%] border-y-[2px] border-r-[2px] border-white/5 bg-[#050505]/80 backdrop-blur-sm z-0" style={`border-right-color: ${servicio.color}`}></div>
+              <div class="bg-[#050505] w-full h-full border-[1px] border-white/10 relative shadow-[30px_10px_50px_rgba(0,0,0,0.95)] flex flex-col overflow-hidden z-10">
+                <div class="h-1.5 w-full flex">
+                  <div class="w-1/3 h-full bg-white/20"></div>
+                  <div class="w-2/3 h-full" style={`background-color: ${servicio.color}`}></div>
+                </div>
+                <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none z-0"></div>
+                <div class="p-5 md:p-6 flex flex-col h-full relative z-10">
+                  <div class="flex justify-between items-center border-b border-white/10 pb-2 mb-4">
+                    <span class="text-[8px] font-mono text-white/50 tracking-[0.2em] uppercase">SYS_FILE // {servicio.id}</span>
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-[8px] font-mono animate-pulse" style={`color: ${servicio.color}`}>ONLINE</span>
+                      <div class="w-1.5 h-1.5 rounded-full shadow-[0_0_5px_currentColor]" style={`background-color: ${servicio.color}; color: ${servicio.color}`}></div>
+                    </div>
+                  </div>
+                  <div class="flex items-start justify-between mb-5">
+                    <div>
+                      <h3 class="text-3xl md:text-4xl font-black text-white tracking-tighter uppercase leading-none drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]">
+                        {servicio.titulo.split('_')[0]}<br/><span class="text-transparent drop-shadow-none" style={`-webkit-text-stroke: 1px ${servicio.color};`}>{servicio.titulo.split('_')[1] || 'SYS'}</span>
+                      </h3>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3 mb-5">
+                    <div class="bg-[#111] p-2.5 border-l-[3px] shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]" style={`border-color: ${servicio.color}`}>
+                      <span class="block text-[7px] text-white/40 font-mono mb-1 uppercase tracking-widest">CATEGORÍA</span>
+                      <span class="text-[10px] text-white font-mono font-bold tracking-wider uppercase">{servicio.tag}</span>
+                    </div>
+                    <div class="bg-[#111] p-2.5 border border-white/5 shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]">
+                      <span class="block text-[7px] text-white/40 font-mono mb-1 uppercase tracking-widest">DATA_SPECS</span>
+                      <span class="text-[9px] text-white/80 font-mono">{servicio.specs.split(' | ')[0]}</span>
+                    </div>
+                  </div>
+                  <div class="flex-grow border-t border-white/10 pt-4 relative">
+                    <div class="absolute left-0 top-4 w-[2px] h-[50%] bg-gradient-to-b to-transparent" style={`from: ${servicio.color}`}></div>
+                    <p class="text-xs md:text-sm text-white/80 font-sans leading-relaxed text-left pl-3 opacity-90">{servicio.review}</p>
+                  </div>
+                  <div class="mt-auto pt-4 flex justify-between items-end border-t border-white/5">
+                    <div class="w-[60%] h-3 bg-[repeating-linear-gradient(90deg,#fff,#fff_1.5px,transparent_1.5px,transparent_3px)] opacity-20"></div>
+                    <span class="text-[7px] font-mono text-white/30 uppercase tracking-widest">END_OF_RECORD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<style>
+  .text-stroke-2 { -webkit-text-stroke: 1.5px; }
+  .stroke-accent { -webkit-text-stroke-color: #EE8027; }
+  
+  .perspective-container {
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+  }
+
+  .cassette-scene {
+    transform-style: preserve-3d;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cassette-scene.is-active {
+    z-index: 100 !important; 
+  }
+
+  .cassette-scene.is-active .cassette-box {
+    position: relative;
+    z-index: 2; 
+  }
+
+  .cassette-scene.is-active .service-info {
+    z-index: 1; 
+  }
+
+  .cassette-box {
+    transform-style: preserve-3d;
+    transform: rotateX(15deg) rotateY(35deg) rotateZ(-5deg);
+  }
+
+  .cassette-scene:not(.is-locked-parent):hover .cassette-box {
+    transform: rotateX(10deg) rotateY(25deg) rotateZ(-2deg) scale(1.05);
+  }
+
+  .box-front { transform: translateZ(20px); }
+  .box-back { transform: translateZ(-20px); }
+  
+  .box-spine { 
+    left: 0;
+    transform: translateX(-50%) rotateY(-90deg); 
+  }
+
+  .tape-slide { transform: translateZ(0px); }
+
+  .cassette-scene.is-active .cassette-box {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+  }
+  
+  .cassette-scene.is-active .tape-slide {
+    transform: translateZ(0px) translateX(95%);
+    box-shadow: 10px 15px 30px rgba(0,0,0,0.9);
+  }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+
+  function initServices() {
+    const track = document.getElementById('cassette-track') as HTMLElement | null;
+    const cassettes = document.querySelectorAll('.cassette-scene');
+
+    if (!track) return;
+
+    let carruselTween = gsap.to(track, {
+      xPercent: -50,
+      ease: "none",
+      duration: 40,
+      repeat: -1
+    });
+
+    track.addEventListener('mouseenter', () => {
+      if (!track.classList.contains('is-locked')) carruselTween.pause();
+    });
+    
+    track.addEventListener('mouseleave', () => {
+      if (!track.classList.contains('is-locked')) carruselTween.play();
+    });
+
+    cassettes.forEach((cassette) => {
+      cassette.addEventListener('click', (e) => {
+        e.stopPropagation(); 
+        
+        const isActive = cassette.classList.contains('is-active');
+
+        if (track.classList.contains('is-locked') && !isActive) return;
+
+        if (isActive) {
+          track.classList.remove('is-locked');
+          cassette.classList.remove('is-active');
+          cassettes.forEach(c => c.classList.remove('is-locked-parent'));
+
+          const infoPanel = cassette.querySelector('.service-info');
+          gsap.to(infoPanel, { autoAlpha: 0, x: -30, duration: 0.3 });
+
+          setTimeout(() => {
+            gsap.to('.cassette-scene', { opacity: 1, pointerEvents: 'auto', duration: 0.5 });
+            gsap.to(track, { 
+              x: 0, 
+              duration: 0.8, 
+              ease: "power3.inOut", 
+              onComplete: () => { carruselTween.play(); }
+            });
+          }, 500);
+
+        } else {
+          track.classList.add('is-locked');
+          cassettes.forEach(c => c.classList.add('is-locked-parent'));
+          carruselTween.pause();
+
+          cassettes.forEach(c => {
+            if (c !== cassette) {
+              gsap.to(c, { opacity: 0, pointerEvents: 'none', duration: 0.4 });
+            }
+          });
+
+          gsap.to(cassette, { opacity: 1, duration: 0.4 });
+
+          const rect = cassette.getBoundingClientRect();
+          const targetX = window.innerWidth < 768 ? 20 : window.innerWidth * 0.15;
+          const currentX = parseFloat(gsap.getProperty(track, "x") as string) || 0;
+          const shiftNeeded = targetX - rect.left;
+
+          gsap.to(track, {
+            x: currentX + shiftNeeded,
+            duration: 0.8,
+            ease: "power3.inOut",
+            onComplete: () => {
+              cassette.classList.add('is-active');
+              const infoPanel = cassette.querySelector('.service-info');
+              gsap.to(infoPanel, { autoAlpha: 1, x: 0, duration: 0.5, delay: 0.2 });
+            }
+          });
+        }
+      });
+    });
+
+    track.addEventListener('click', () => {
+      const activeCassette = document.querySelector('.cassette-scene.is-active') as HTMLElement;
+      if (activeCassette) {
+        activeCassette.click();
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initServices);
+  document.addEventListener('astro:page-load', initServices); 
+</script>

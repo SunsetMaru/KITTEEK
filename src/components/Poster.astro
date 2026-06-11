@@ -1,0 +1,16 @@
+---
+// src/components/Poster.astro
+const { title, name, id, imgSrc } = Astro.props;
+---
+
+<div class="carousel-poster w-[75vw] max-w-xs aspect-[3/4] bg-white border-[12px] border-[#0b0b0d] text-[#0b0b0d] p-4 flex flex-col shrink-0 shadow-[0_0_40px_rgba(0,0,0,0.8)] origin-bottom">
+  <div class="poster-header h-14 shrink-0 flex items-center justify-center border-4 border-[#0b0b0d] bg-white">
+    <span class="font-display font-black text-2xl tracking-tighter">{title}</span>
+  </div>
+  <div class="poster-img-container relative flex-grow overflow-hidden border-2 border-[#0b0b0d] my-2 bg-[#0b0b0d]/10">
+    <img src={imgSrc} class="absolute inset-0 poster-img opacity-0 scale-125 w-full h-full object-cover grayscale" />
+  </div>
+  <div class="poster-data shrink-0 font-mono text-center text-[10px] font-black tracking-widest bg-[#0b0b0d] text-white py-1">
+    {name} // {id}
+  </div>
+</div>
