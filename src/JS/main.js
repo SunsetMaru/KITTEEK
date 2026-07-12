@@ -137,7 +137,7 @@ introTimeline
 const loadStatus = { percentage: 0 };
 introTimeline.to(loadStatus, {
     percentage: 100,
-    duration: 3,
+    duration: 1,
     ease: 'power1.inOut',
     onUpdate: () => {
         const current = Math.floor(loadStatus.percentage);
