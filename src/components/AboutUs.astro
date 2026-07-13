@@ -9,25 +9,25 @@ const team = [
 ];
 ---
 
-<section id="about" class="w-full min-h-screen flex items-center justify-center bg-[#0a0a0a] border-y-8 border-[#EE8027] font-sans text-[#EACCB0] overflow-hidden selection:bg-[#64bbb3] selection:text-[#0a0a0a]">
+<section id="about" class="w-full min-h-screen flex items-center justify-center bg-[#0a0b0d] border-y-8 border-[#ff7300] font-sans text-[#e3dfd5] overflow-hidden selection:bg-[#4ade80] selection:text-[#0a0b0d]">
 
   <div class="w-full max-w-[1400px] mx-auto px-6 py-12 flex flex-col lg:flex-row gap-10 items-center">
     
     <div class="w-full lg:w-4/12 flex flex-col">
-      <div class="inline-block bg-[#64bbb3] text-[#0a0a0a] font-mono text-[10px] font-bold px-2 py-1 mb-4 self-start border border-[#64bbb3]">
+      <div class="inline-block bg-[#4ade80] text-[#0a0b0d] font-mono text-[10px] font-bold px-2 py-1 mb-4 self-start border border-[#4ade80]">
         FILE: ABOUT_US.DAT
       </div>
       
       <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-5">
         WE ARE <br/> 
-        <span class="text-[#EE8027]">KITTEEK</span>
+        <span class="text-[#ff7300]">KITTEEK</span>
       </h2>
       
-      <p class="text-base font-bold mb-5 border-l-4 border-[#64bbb3] pl-4 text-[#EACCB0]/80">
+      <p class="text-base font-bold mb-5 border-l-4 border-[#4ade80] pl-4 text-[#e3dfd5]/80">
         Prueba, prueba
       </p>
 
-      <ul class="font-mono text-[11px] space-y-1.5 text-[#64bbb3] flex flex-col">
+      <ul class="font-mono text-[11px] space-y-1.5 text-[#4ade80] flex flex-col">
         <li>[+] WEB_DEVELOPMENT</li>
         <li>[+] BRANDING_SYSTEMS</li>
         <li>[+] UI_UX_OVERDRIVE</li>
@@ -37,20 +37,20 @@ const team = [
 
     <div class="w-full lg:w-8/12 grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
       {team.map((member) => (
-        <article class="group relative bg-[#111] border-2 border-[#EACCB0] p-1.5 hover:border-[#EE8027] transition-colors duration-300 shadow-[4px_4px_0px_#EE8027]">
+        <article class="group relative bg-[#13151a] border-2 border-[#e3dfd5] p-1.5 hover:border-[#ff7300] transition-colors duration-300 shadow-[4px_4px_0px_#ff7300]">
           
-          <div class="w-full bg-[#1a1a1a] aspect-square overflow-hidden border border-[#333] relative">
+          <div class="w-full bg-[#0a0b0d] aspect-square overflow-hidden border border-[#6e7582]/40 relative">
             <img 
               src={member.img} 
               alt={member.name} 
               class="w-full h-full object-cover filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
             />
-            <div class="absolute top-2 right-2 w-2 h-2 bg-[#EE8027] rounded-full animate-pulse opacity-0 group-hover:opacity-100"></div>
+            <div class="absolute top-2 right-2 w-2 h-2 bg-[#ff7300] rounded-full animate-pulse opacity-0 group-hover:opacity-100"></div>
           </div>
 
-          <div class="mt-2 pb-1 border-b-2 border-[#333] group-hover:border-[#64bbb3] transition-colors">
-            <h3 class="text-xl font-black uppercase tracking-tighter text-[#EACCB0] leading-none">{member.name}</h3>
-            <p class="text-[#64bbb3] font-mono text-[9px] mt-1 font-bold tracking-widest">{member.role}</p>
+          <div class="mt-2 pb-1 border-b-2 border-[#6e7582]/40 group-hover:border-[#4ade80] transition-colors">
+            <h3 class="text-xl font-black uppercase tracking-tighter text-[#e3dfd5] leading-none">{member.name}</h3>
+            <p class="text-[#4ade80] font-mono text-[9px] mt-1 font-bold tracking-widest">{member.role}</p>
           </div>
         </article>
       ))}

@@ -59,7 +59,7 @@ function crearEfectoGlitch() {
 // ==========================================
 const introTimeline = gsap.timeline();
 
-// Seteo de estados antes de la detonación (Removimos #final-navbar y #brand-layer ya que se manejan distinto ahora)
+// Seteo de estados antes de la detonación
 gsap.set(['#loader-top', '#loader-bottom', '#ticker-wrap-1', '#ticker-wrap-2', '#character-container', '#main-posters-bg'], { opacity: 0 });
 
 // PRE-ALINEACIÓN: Mandamos los posters laterales hacia atrás del primero
@@ -74,10 +74,10 @@ posters.forEach((poster, i) => {
 });
 
 introTimeline
-    // GOLPE 1: Flash estroboscópico agresivo
+    // GOLPE 1: Flash estroboscópico agresivo (Actualizado con colores nuevos)
     .to('body', { backgroundColor: '#ffffff', duration: 0.05 })
-    .to('body', { backgroundColor: '#ef4444', duration: 0.05 })
-    .to('body', { backgroundColor: '#0b0b0d', duration: 0.1 })
+    .to('body', { backgroundColor: '#4ade80', duration: 0.05 }) // Color Teal
+    .to('body', { backgroundColor: '#0a0b0d', duration: 0.1 }) // Color Dark
 
     // GOLPE 2: RÁFAGA ESTROBOSCÓPICA DE AMBOS LOGOS (GLITCH INICIAL)
     .add(crearEfectoGlitch())
@@ -114,7 +114,7 @@ introTimeline
     .to(['#ticker-wrap-1', '#ticker-wrap-2'], { opacity: 0, duration: 0.03 })
 
     // ESTABILIZACIÓN DEFINITIVA
-    .to('body', { backgroundColor: '#0b0b0d', duration: 0.1 }) 
+    .to('body', { backgroundColor: '#0a0b0d', duration: 0.1 }) 
     
     .to('#intro-posters', { duration: 0.01, onComplete: () => {
         const el = document.getElementById('intro-posters');
@@ -151,42 +151,43 @@ introTimeline.to(loadStatus, {
 
         exitTimeline
             // Pausa contemplando el 100% de la barra
-            .to({}, { duration: 0.2 })
+            .to({}, { duration: 0.1 })
             
-            // FULMINACIÓN QUIRÚRGICA
             .set(['#loader-top', '#loader-bottom', '#ticker-wrap-1', '#ticker-wrap-2', '#main-posters-bg'], {
                 opacity: 0
             })
             
-            // Lanzamos el efecto glitch
             .add(crearEfectoGlitch())
             
-            // Flash cromático final
             .to('body', { backgroundColor: '#ffffff', duration: 0.04 })
-            .to('body', { backgroundColor: '#EE8027', duration: 0.04 })
+            .to('body', { backgroundColor: '#ff7300', duration: 0.04 }) // Naranja
             .to('body', { 
-                backgroundColor: '#0b0b0d', 
+                backgroundColor: '#0a0b0d', // Dark
                 duration: 0.06,
                 onComplete: () => {
                     
-                    // 💥 AQUÍ OCURRE LA MAGIA: ELIMINAMOS EL CONTENEDOR COMPLETO
                     gsap.to('#preloader-wrapper', {
                         opacity: 0,
                         duration: 0.4,
                         ease: 'power2.out',
                         onComplete: () => {
                             const preloader = document.getElementById('preloader-wrapper');
-                            if (preloader) preloader.remove(); // Se elimina físicamente del DOM
+                            if (preloader) preloader.remove(); 
                             
-                            // Revelamos el contenido principal futuro
                             gsap.to('#main-content', { opacity: 1, duration: 0.5 });
                             const mainContent = document.getElementById('main-content');
                             if (mainContent) mainContent.classList.remove('pointer-events-none');
                         }
                     });
 
-                    // Devolvemos el control al usuario (Scroll y Clicks habilitados)
+                    // Devolvemos el control al usuario
                     document.body.classList.remove('overflow-hidden', 'select-none');
+                    
+                    // === CONEXIÓN CON LENIS ===
+                    if (window.lenis) {
+                        window.lenis.start();
+                        window.lenis.resize();
+                    }
                 }
             });
     }

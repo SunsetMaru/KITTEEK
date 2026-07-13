@@ -17,6 +17,25 @@ import Footer from '../components/Footer.astro';
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- ESTILOS OBLIGATORIOS PARA LENIS -->
+  <style is:global>
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+    .lenis.lenis-smooth iframe {
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body class="bg-[#050505] text-white overflow-hidden min-h-screen relative font-mono select-none">
 
@@ -31,14 +50,51 @@ import Footer from '../components/Footer.astro';
   
   <main id="main-content" class="relative z-20 opacity-0 pointer-events-none">
     <Hero />
-    <AboutUs />
     <Servicios />
+    <AboutUs />
     <Portafolio />
     <Footer />
   </main>
 
+  <!-- LIBRERÍA LENIS (SCROLL SUAVE) POR CDN -->
+  <script is:inline src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+
+<!-- Busca este bloque al final de tu HTML y añádele el lenis.stop() -->
   <script>
-    import "../JS/main.js";
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import "../JS/main.js"; // Tu script principal
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Inicializar Lenis (Casteamos window a any para evitar ts(2339))
+      const Lenis = (window as any).Lenis;
+      
+      const lenis = new Lenis({
+        autoRaf: false, 
+        duration: 1.2,  
+        // Declaramos explícitamente que 't' es un number para evitar ts(7006)
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+        smoothWheel: true,
+      });
+
+      // 💥 DETENER LENIS INMEDIATAMENTE PARA BLOQUEAR EL SCROLL DEL PRELOADER
+      lenis.stop(); 
+
+      // 2. Sincronizar Lenis con GSAP ScrollTrigger
+      lenis.on('scroll', ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+
+      // 3. Exponemos Lenis globalmente por si necesitas pausarlo en tu main.js
+      // (Casteamos de nuevo window a any)
+      (window as any).lenis = lenis;
+    });
   </script>
 </body>
 </html>

@@ -1,70 +1,80 @@
 ---
-// Portafolio.astro - ARCHIVO MODULAR
+// Portafolio.astro - ARCHIVO MODULAR COMPLETO
 const proyectos = [
   { 
     id: "ARC-014", 
     cliente: "NEON NIGHTS", 
     categoria: "BRANDING", 
-    color: "#EE8027", 
+    color: "#ff7300", 
     img: "/ASSETS/IMG/CHAR1.png", 
     codigoCorto: "XX-990",
     specs: "DURACIÓN: 6-8 SEMANAS | FORMATO: VECTOR/DAT",
-    review: "Reestructuración completa de la identidad visual corporativa para el sindicato underground Neon Nights. Incluye logos reactivos, manuales holográficos y paleta de neón para entornos de pulso electromagnético."
+    review: "Reestructuración completa de la identidad visual corporativa para el sindicato underground Neon Nights. Incluye logos reactivos, manuales holográficos y paleta de neón para entornos de pulso electromagnético.",
+    archivoUrl: "",
+    tipoArchivo: "PDF" 
   },
   { 
     id: "ARC-025", 
     cliente: "CYBER_CORP", 
     categoria: "UI/UX_SYS", 
-    color: "#64bbb3", 
+    color: "#4ade80", 
     img: "/ASSETS/IMG/CHAR2.png",
     codigoCorto: "SYS-A",
     specs: "DURACIÓN: 10-12 SEMANAS | PROTOCOLO: NEURAL-LINK",
-    review: "Arquitectura de interfaz para la terminal principal de Cyber_Corp. Navegación letal, animaciones fluidas a 120fps y una experiencia de usuario optimizada para implantes neuronales de última generación."
+    review: "Arquitectura de interfaz para la terminal principal de Cyber_Corp. Navegación letal, animaciones fluidas a 120fps y una experiencia de usuario optimizada para implantes neuronales de última generación.",
+    archivoUrl: "https://ejemplo.com",
+    tipoArchivo: "WEB"
   },
   { 
     id: "ARC-099", 
     cliente: "MECHA PARTS", 
     categoria: "WEB_DEV", 
-    color: "#EACCB0", 
+    color: "#e3dfd5", 
     img: "/ASSETS/IMG/CHAR5.png",
     codigoCorto: "DEV-X",
     specs: "DURACIÓN: 8-10 SEMANAS | STACK: VUE/GSAP",
-    review: "Plataforma de e-commerce de alta velocidad para la distribución global de piezas mecánicas clasificados. Base de datos encriptada y un DOM renderizado a la velocidad de la luz."
+    review: "Plataforma de e-commerce de alta velocidad para la distribución global de piezas mecánicas clasificados. Base de datos encriptada y un DOM renderizado a la velocidad de la luz.",
+    archivoUrl: "",
+    tipoArchivo: "NONE"
   },
   { 
     id: "ARC-000", 
     cliente: "STREET PUNKS", 
     categoria: "MOTION", 
-    color: "#EE8027", 
+    color: "#ff7300", 
     img: "/ASSETS/IMG/CHAR4.png",
     codigoCorto: "MOT-0",
     specs: "DURACIÓN: 4-6 SEMANAS | FPS: 60/120",
-    review: "Cinemáticas promocionales agresivas y Motion Graphics para la campaña underground de Street Punks. Glitches controlados, modelado 3D y una estética visual que rompe la retina."
+    review: "Cinemáticas promocionales agresivas y Motion Graphics para la campaña underground de Street Punks. Glitches controlados, modelado 3D y una estética visual que rompe la retina.",
+    archivoUrl: "https://ejemplo.com/video",
+    tipoArchivo: "WEB"
   },
   { 
     id: "ARC-007", 
     cliente: "GHOST DATA", 
     categoria: "SYSTEMS", 
-    color: "#64bbb3", 
+    color: "#4ade80", 
     img: "/ASSETS/IMG/CHAR3.png",
     codigoCorto: "GHS-7",
     specs: "DURACIÓN: CONTINUA | RATING: CLASE S",
-    review: "Infiltración y optimización de servidores fantasma. Reestructuración de la arquitectura backend para garantizar un 99.9% de uptime bajo ataques masivos de denegación de servicio."
+    review: "Infiltración y optimización de servidores fantasma. Reestructuración de la arquitectura backend para garantizar un 99.9% de uptime bajo ataques masivos de denegación de servicio.",
+    archivoUrl: "/ASSETS/DOCS/Portafolio_Jhany.pdf",
+    tipoArchivo: "PDF" 
   }
 ];
 ---
 
-<section id="portfolio" class="relative w-full font-sans select-none pt-32 pb-32 overflow-hidden bg-[#0a0a0a]">
+<section id="portfolio" class="relative z-10 w-full font-sans select-none pt-32 pb-32 overflow-hidden bg-[#0a0b0d] transition-all duration-300">
 
   <div class="relative z-10 px-4 md:px-8 xl:px-0 max-w-[1500px] mx-auto w-full">
     
-    <div class="mb-16 flex flex-col md:flex-row items-end justify-between border-b-[3px] border-[#EACCB0]/20 pb-4 relative">
+    <div class="mb-16 flex flex-col md:flex-row items-end justify-between border-b-[3px] border-[#e3dfd5]/20 pb-4 relative">
       <div class="relative z-10">
-        <h2 class="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] text-[#EACCB0] drop-shadow-[4px_4px_0px_#0a0a0a]">
+        <h2 class="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] text-[#e3dfd5] drop-shadow-[4px_4px_0px_#13151a]">
           PROYECTOS<span class="text-transparent text-stroke-2 stroke-accent"> RECIENTES</span>
         </h2>
       </div>
-      <p class="text-white/40 font-mono text-xs max-w-sm text-right mt-4 md:mt-0">
+      <p class="text-[#e3dfd5]/40 font-mono text-xs max-w-sm text-right mt-4 md:mt-0">
         > SELECCIONA UN CARTUCHO PARA CARGAR EL DISCO Y LEER LOS DATOS CLASIFICADOS.
       </p>
     </div>
@@ -75,137 +85,161 @@ const proyectos = [
         <article class="relative w-full max-w-[340px] aspect-[4/3] group cursor-pointer perspective-1000 z-10 js-project-card overflow-visible">
           
           <div class="card-closed absolute inset-0 transition-opacity duration-300">
-            <div class="absolute top-[4%] bottom-[4%] right-[2%] aspect-square rounded-full shadow-[15px_15px_25px_rgba(0,0,0,0.9)] transition-all duration-[700ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-[45%] group-hover:rotate-[180deg] group-hover:scale-[1.02] flex items-center justify-center border-[2px] border-black/90 z-0 bg-[#111]"
+            <div class="absolute top-[4%] bottom-[4%] right-[2%] aspect-square rounded-full shadow-[15px_15px_25px_rgba(10,11,13,0.9)] transition-all duration-[700ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-[45%] group-hover:rotate-[180deg] group-hover:scale-[1.02] flex items-center justify-center border-[2px] border-[#0a0b0d]/90 z-0 bg-[#13151a]"
                  style={`-webkit-mask-image: radial-gradient(circle, transparent 13%, black 13.5%); mask-image: radial-gradient(circle, transparent 13%, black 13.5%); box-shadow: 0 0 0 2px ${proyecto.color}40 inset;`}>
               
               <img src={proyecto.img} alt={proyecto.cliente} class="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-luminosity contrast-[1.3] group-hover:opacity-100 transition-opacity" />
               <div class="absolute inset-0 mix-blend-color opacity-50" style={`background-color: ${proyecto.color};`}></div>
 
-              <div class="absolute inset-0 border-[6px] border-black/40 rounded-full m-2 pointer-events-none"></div>
-              <div class="absolute inset-0 border border-white/10 rounded-full m-0.5 pointer-events-none"></div>
+              <div class="absolute inset-0 border-[6px] border-[#0a0b0d]/40 rounded-full m-2 pointer-events-none"></div>
+              <div class="absolute inset-0 border border-[#e3dfd5]/10 rounded-full m-0.5 pointer-events-none"></div>
 
-              <div class="absolute top-2 w-full text-center text-[8px] font-mono font-black tracking-[0.2em] text-white/70 drop-shadow-md">
+              <div class="absolute top-2 w-full text-center text-[8px] font-mono font-black tracking-[0.2em] text-[#e3dfd5]/70 drop-shadow-md">
                 {proyecto.codigoCorto}
               </div>
             </div>
 
-            <div class="absolute inset-y-0 left-0 w-[86%] bg-[#0a0a0a] border-t-[2px] border-l-[2px] border-white/10 border-r-[4px] border-b-[4px] border-black shadow-[15px_15px_30px_rgba(0,0,0,0.9),inset_0_0_40px_rgba(0,0,0,0.6)] overflow-hidden flex z-20 clip-cartridge">
+            <div class="absolute inset-y-0 left-0 w-[86%] bg-[#0a0b0d] border-t-[2px] border-l-[2px] border-[#e3dfd5]/10 border-r-[4px] border-b-[4px] border-[#13151a] shadow-[15px_15px_30px_rgba(10,11,13,0.9),inset_0_0_40px_rgba(10,11,13,0.6)] overflow-hidden flex z-20 clip-cartridge">
               
-              <div class="w-10 h-full bg-[#111] flex flex-col items-center py-3 justify-between border-r border-white/5 relative z-30 shadow-[5px_0_10px_rgba(0,0,0,0.8)]">
-                <div class="w-6 h-6 rounded-sm border-[2px] flex items-center justify-center text-black font-black text-[10px]" style={`background-color: ${proyecto.color}; border-color: ${proyecto.color};`}>
+              <div class="w-10 h-full bg-[#13151a] flex flex-col items-center py-3 justify-between border-r border-[#e3dfd5]/5 relative z-30 shadow-[5px_0_10px_rgba(10,11,13,0.8)]">
+                <div class="w-6 h-6 rounded-sm border-[2px] flex items-center justify-center text-[#0a0b0d] font-black text-[10px]" style={`background-color: ${proyecto.color}; border-color: ${proyecto.color};`}>
                   {index + 1}
                 </div>
-                <div class="transform -rotate-90 text-[8px] font-mono text-white/50 font-black tracking-[0.3em] whitespace-nowrap mt-8 w-[200px] text-center">
+                <div class="transform -rotate-90 text-[8px] font-mono text-[#e3dfd5]/50 font-black tracking-[0.3em] whitespace-nowrap mt-8 w-[200px] text-center">
                   {proyecto.id}
                 </div>
                 <div class="w-full px-2 mt-auto opacity-30 flex flex-col gap-[2px]">
-                  <div class="h-[2px] bg-white"></div><div class="h-[1px] bg-white"></div><div class="h-[3px] bg-white"></div><div class="h-[1px] bg-white"></div>
+                  <div class="h-[2px] bg-[#e3dfd5]"></div><div class="h-[1px] bg-[#e3dfd5]"></div><div class="h-[3px] bg-[#e3dfd5]"></div><div class="h-[1px] bg-[#e3dfd5]"></div>
                 </div>
               </div>
 
-              <div class="flex-grow relative overflow-hidden bg-[#151515]">
+              <div class="flex-grow relative overflow-hidden bg-[#13151a]">
                 
                 <img src={proyecto.img} alt="Cover" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-30 contrast-[1.4] filter grayscale pointer-events-none" />
                 <div class="absolute inset-0 mix-blend-multiply opacity-90" style={`background-color: ${proyecto.color};`}></div>
-                <div class="absolute inset-0 bg-[radial-gradient(black_1px,transparent_1px)] [background-size:3px_3px] opacity-40"></div>
+                <div class="absolute inset-0 bg-[radial-gradient(#0a0b0d_1px,transparent_1px)] [background-size:3px_3px] opacity-40"></div>
 
                 <div class="relative z-30 h-full p-4 flex flex-col justify-between">
                   
                   <div class="flex justify-start items-start">
-                    <span class="bg-black text-white px-1.5 py-0.5 text-[7px] font-mono tracking-widest uppercase border border-white/10 w-max shadow-sm">
+                    <span class="bg-[#0a0b0d] text-[#e3dfd5] px-1.5 py-0.5 text-[7px] font-mono tracking-widest uppercase border border-[#e3dfd5]/10 w-max shadow-sm">
                       {proyecto.codigoCorto}
                     </span>
                   </div>
 
                   <div class="mt-auto mb-3">
-                    <h3 class="text-3xl md:text-4xl font-black text-white tracking-tighter leading-[0.85] uppercase drop-shadow-[2px_2px_0px_#000]">
+                    <h3 class="text-3xl md:text-4xl font-black text-[#e3dfd5] tracking-tighter leading-[0.85] uppercase drop-shadow-[2px_2px_0px_#0a0b0d]">
                       {proyecto.cliente}
                     </h3>
                     <div class="flex items-center gap-2 mt-2">
-                      <div class="h-[1.5px] w-6 bg-white"></div>
-                      <span class="text-white font-mono text-[9px] font-bold tracking-[0.1em] uppercase bg-black px-1.5 py-0.5">{proyecto.categoria}</span>
+                      <div class="h-[1.5px] w-6 bg-[#e3dfd5]"></div>
+                      <span class="text-[#e3dfd5] font-mono text-[9px] font-bold tracking-[0.1em] uppercase bg-[#0a0b0d] px-1.5 py-0.5">{proyecto.categoria}</span>
                     </div>
                   </div>
 
-                  <div class="flex justify-between items-end border-t border-white/10 pt-2">
+                  <div class="flex justify-between items-end border-t border-[#e3dfd5]/10 pt-2">
                      <div class="flex gap-0.5">
-                       <span class="w-3 h-3 bg-white text-black text-[6px] flex items-center justify-center font-black rounded-[2px]">A</span>
-                       <span class="w-3 h-3 border border-white/30 text-white text-[6px] flex items-center justify-center font-black rounded-[2px]">B</span>
+                       <span class="w-3 h-3 bg-[#e3dfd5] text-[#0a0b0d] text-[6px] flex items-center justify-center font-black rounded-[2px]">A</span>
+                       <span class="w-3 h-3 border border-[#e3dfd5]/30 text-[#e3dfd5] text-[6px] flex items-center justify-center font-black rounded-[2px]">B</span>
                      </div>
-                     <span class="text-[6px] font-mono text-white/50 text-right max-w-[100px] uppercase">
+                     <span class="text-[6px] font-mono text-[#e3dfd5]/50 text-right max-w-[100px] uppercase">
                        SYS_KT_00{index+1}
                      </span>
                   </div>
                 </div>
 
-                <div class="absolute top-1/4 -right-10 w-[150%] h-5 transform rotate-[-35deg] border-y border-black shadow-[0_5px_15px_rgba(0,0,0,0.6)] z-40 opacity-90 mix-blend-hard-light" 
-                     style={`background: repeating-linear-gradient(45deg, #000, #000 6px, ${proyecto.color} 6px, ${proyecto.color} 12px);`}>
+                <div class="absolute top-1/4 -right-10 w-[150%] h-5 transform rotate-[-35deg] border-y border-[#0a0b0d] shadow-[0_5px_15px_rgba(10,11,13,0.6)] z-40 opacity-90 mix-blend-hard-light" 
+                     style={`background: repeating-linear-gradient(45deg, #0a0b0d, #0a0b0d 6px, ${proyecto.color} 6px, ${proyecto.color} 12px);`}>
                 </div>
 
-                <div class="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-white/10 pointer-events-none z-50"></div>
-                <div class="absolute top-0 left-0 w-[200%] h-[200%] bg-gradient-to-b from-white/10 to-transparent transform -rotate-45 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50"></div>
+                <div class="absolute inset-0 bg-gradient-to-tr from-[#e3dfd5]/5 via-transparent to-[#e3dfd5]/10 pointer-events-none z-50"></div>
+                <div class="absolute top-0 left-0 w-[200%] h-[200%] bg-gradient-to-b from-[#e3dfd5]/10 to-transparent transform -rotate-45 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50"></div>
               </div>
             </div>
           </div>
 
           <div class="card-opened absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280%] h-[180%] scale-0 opacity-0 pointer-events-none z-50 flex gap-12 items-center">
             
-            <div class="detailed-disc w-[50%] aspect-square rounded-full flex items-center justify-center border-[4px] border-black/90 bg-[#111] shadow-[20px_20px_50px_rgba(0,0,0,0.8)] relative"
+            <div class="detailed-disc w-[50%] aspect-square rounded-full flex items-center justify-center border-[4px] border-[#0a0b0d]/90 bg-[#13151a] shadow-[20px_20px_50px_rgba(10,11,13,0.8)] relative"
                  style={`-webkit-mask-image: radial-gradient(circle, transparent 13%, black 13.5%); mask-image: radial-gradient(circle, transparent 13%, black 13.5%); box-shadow: 0 0 0 4px ${proyecto.color}60 inset;`}>
               
               <img src={proyecto.img} alt={proyecto.cliente} class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity contrast-[1.3]" />
               <div class="absolute inset-0 mix-blend-color opacity-50" style={`background-color: ${proyecto.color};`}></div>
               
-              <div class="absolute inset-0 border-[12px] border-black/50 rounded-full m-3 pointer-events-none"></div>
-              <div class="absolute inset-0 border border-white/20 rounded-full m-1 pointer-events-none"></div>
-              <div class="absolute inset-[25%] border-[2px] border-white/10 rounded-full pointer-events-none"></div>
-              <div class="absolute inset-[35%] border-[1px] border-white/20 rounded-full pointer-events-none border-dashed"></div>
+              <div class="absolute inset-0 border-[12px] border-[#0a0b0d]/50 rounded-full m-3 pointer-events-none"></div>
+              <div class="absolute inset-0 border border-[#e3dfd5]/20 rounded-full m-1 pointer-events-none"></div>
+              <div class="absolute inset-[25%] border-[2px] border-[#e3dfd5]/10 rounded-full pointer-events-none"></div>
+              <div class="absolute inset-[35%] border-[1px] border-[#e3dfd5]/20 rounded-full pointer-events-none border-dashed"></div>
 
-              <div class="absolute inset-[15%] rounded-full border border-white/5 opacity-40">
-                <div class="w-full h-full transform rotate-[45deg] bg-[linear-gradient(45deg,transparent_45%,rgba(255,255,255,0.05)_50%,transparent_55%)]"></div>
+              <div class="absolute inset-[15%] rounded-full border border-[#e3dfd5]/5 opacity-40">
+                <div class="w-full h-full transform rotate-[45deg] bg-[linear-gradient(45deg,transparent_45%,rgba(227,223,213,0.05)_50%,transparent_55%)]"></div>
               </div>
 
-              <div class="absolute top-[20%] w-full text-center text-[10px] font-mono font-black tracking-[0.2em] text-white/90 drop-shadow-md">
+              <div class="absolute top-[20%] w-full text-center text-[10px] font-mono font-black tracking-[0.2em] text-[#e3dfd5]/90 drop-shadow-md">
                 {proyecto.codigoCorto} // {proyecto.id}
               </div>
-              <div class="absolute bottom-[20%] bg-black/80 px-2 py-0.5 text-[8px] font-mono text-white" style={`border-bottom: 2px solid ${proyecto.color}`}>
+              <div class="absolute bottom-[20%] bg-[#0a0b0d]/80 px-2 py-0.5 text-[8px] font-mono text-[#e3dfd5]" style={`border-bottom: 2px solid ${proyecto.color}`}>
                 SYSTEM_READER: GEN-KT-00{index+1}
               </div>
             </div>
 
-            <div class="w-[50%] flex-grow bg-[#050505] border-[1px] p-6 relative shadow-[20px_20px_50px_rgba(0,0,0,0.9)]" style={`border-color: ${proyecto.color}60`}>
+            <div class="w-[50%] flex-grow bg-[#0a0b0d] border-[1px] p-6 relative shadow-[20px_20px_50px_rgba(10,11,13,0.9)] flex flex-col" style={`border-color: ${proyecto.color}60`}>
               
               <div class="absolute top-0 left-0 w-full h-1" style={`background-color: ${proyecto.color}; opacity: 0.8`}></div>
-              <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.8)_50%)] bg-[size:100%_4px] pointer-events-none z-0 opacity-40"></div>
+              <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(10,11,13,0.8)_50%)] bg-[size:100%_4px] pointer-events-none z-0 opacity-40"></div>
               
-              <div class="relative z-10">
-                <div class="flex justify-between items-center text-[10px] font-mono text-white/50 mb-4 border-b border-white/10 pb-2">
+              <div class="relative z-10 flex-grow">
+                <div class="flex justify-between items-center text-[10px] font-mono text-[#e3dfd5]/50 mb-4 border-b border-[#e3dfd5]/10 pb-2">
                   <span>RECORD: {proyecto.id}</span>
                   <div class="flex items-center gap-2">
-                    <span class="animate-pulse" style={`color: ${proyecto.color}`}>SYSTEM_ACTIVE</span>
-                    <div class="w-2 h-2 rounded-full" style={`background-color: ${proyecto.color}`}></div>
+                    <span class={proyecto.tipoArchivo === 'NONE' ? "text-[#ff2a2a] animate-none" : "animate-pulse"} style={proyecto.tipoArchivo !== 'NONE' ? `color: ${proyecto.color}` : ''}>
+                      {proyecto.tipoArchivo === 'NONE' ? 'SYSTEM_LOCKED' : 'SYSTEM_ACTIVE'}
+                    </span>
+                    <div class="w-2 h-2 rounded-full" style={`background-color: ${proyecto.tipoArchivo === 'NONE' ? '#ff2a2a' : proyecto.color}`}></div>
                   </div>
                 </div>
 
-                <h3 class="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-3" style={`text-shadow: 3px 3px 0px ${proyecto.color}60`}>
+                <h3 class="text-3xl md:text-5xl font-black text-[#e3dfd5] tracking-tighter uppercase leading-[0.9] mb-3" style={`text-shadow: 3px 3px 0px ${proyecto.color}60`}>
                   {proyecto.cliente}
                 </h3>
                 
-                <div class="inline-block bg-white/10 text-white border border-white/20 px-2 py-0.5 text-[10px] font-mono font-bold tracking-widest mb-6 uppercase">
+                <div class="inline-block bg-[#e3dfd5]/10 text-[#e3dfd5] border border-[#e3dfd5]/20 px-2 py-0.5 text-[10px] font-mono font-bold tracking-widest mb-6 uppercase">
                   {proyecto.categoria}
                 </div>
 
-                <div class="text-[9px] md:text-[10px] font-mono text-white/70 mb-4 bg-black/60 p-2 border-l-2" style={`border-color: ${proyecto.color}`}>
-                  <span class="text-white block mb-1 font-bold">TECH_SPECS //</span>
+                <div class="text-[9px] md:text-[10px] font-mono text-[#e3dfd5]/70 mb-4 bg-[#13151a]/60 p-2 border-l-2" style={`border-color: ${proyecto.tipoArchivo === 'NONE' ? '#ff2a2a' : proyecto.color}`}>
+                  <span class="text-[#e3dfd5] block mb-1 font-bold">TECH_SPECS //</span>
                   {proyecto.specs}
                 </div>
 
-                <p class="text-sm md:text-base text-white/80 font-sans leading-relaxed border-t border-white/10 pt-4">
+                <p class="text-sm md:text-base text-[#e3dfd5]/80 font-sans leading-relaxed border-t border-[#e3dfd5]/10 pt-4">
                   {proyecto.review}
                 </p>
+              </div>
 
-                <button class="js-close-btn mt-6 w-full py-2 bg-white/5 hover:bg-white/10 border border-white/20 text-white font-mono text-[10px] uppercase tracking-widest transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                  <span class="text-red-500 font-black">X</span> CERRAR_ARCHIVO
+              <!-- LÓGICA CONDICIONAL DE BOTONES: VISOR DE PDF INCORPORADO -->
+              <div class="relative z-10 mt-6 flex flex-col gap-2">
+                
+                {proyecto.tipoArchivo === 'PDF' && (
+                  <button data-pdf={proyecto.archivoUrl} class="js-view-pdf-btn w-full py-3 bg-[#4ade80] hover:bg-[#ff8c33] text-[#0a0b0d] font-black text-[11px] uppercase tracking-widest transition-transform hover:-translate-y-1 shadow-[4px_4px_0px_#e3dfd5] flex items-center justify-center gap-2 pointer-events-auto">
+                    <span class="text-[#e3dfd5] font-mono bg-[#0a0b0d] px-1 py-0.5 text-[8px]">[.PDF]</span> VISUALIZAR_DATOS
+                  </button>
+                )}
+
+                {proyecto.tipoArchivo === 'WEB' && (
+                  <a href={proyecto.archivoUrl} target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-[#4ade80] hover:bg-[#5cf090] text-[#0a0b0d] font-black text-[11px] uppercase tracking-widest transition-transform hover:-translate-y-1 shadow-[4px_4px_0px_#e3dfd5] flex items-center justify-center gap-2 pointer-events-auto">
+                    <span class="text-[#e3dfd5] font-mono bg-[#0a0b0d] px-1 py-0.5 text-[8px]">[WWW]</span> CONECTAR_ENLACE
+                  </a>
+                )}
+
+                {proyecto.tipoArchivo === 'NONE' && (
+                  <div class="w-full py-3 bg-[#13151a] border-2 border-dashed border-[#ff2a2a]/50 text-[#ff2a2a] font-mono text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 cursor-not-allowed opacity-80 pointer-events-auto">
+                    <span>[!]</span> ARCHIVO_CLASIFICADO
+                  </div>
+                )}
+
+                <button class="js-close-btn w-full py-2 mt-1 bg-transparent hover:bg-[#e3dfd5]/5 border border-[#e3dfd5]/20 text-[#e3dfd5] font-mono text-[10px] uppercase tracking-widest transition-colors flex items-center justify-center gap-2 cursor-pointer pointer-events-auto">
+                  <span class="text-[#ff2a2a] font-black">X</span> CERRAR_ARCHIVO
                 </button>
               </div>
             </div>
@@ -218,26 +252,65 @@ const proyectos = [
 
 </section>
 
+<!-- MODAL DEL VISOR DE PDF SEGURO BEHANCE-STYLE -->
+<div id="pdf-viewer-modal" class="fixed inset-0 z-[9999] bg-[#0a0b0d]/95 backdrop-blur-md hidden flex-col items-center justify-center p-2 md:p-6 opacity-0 transition-opacity duration-300">
+  
+  <div class="w-full max-w-[95vw] lg:max-w-[1400px] bg-[#4ade80] flex justify-between items-center px-4 py-3 border-x-4 border-t-4 border-[#0a0b0d]">
+    <div class="flex items-center gap-2">
+      <span class="w-3 h-3 bg-[#0a0b0d] rounded-full animate-pulse"></span>
+      <span class="font-mono text-[#0a0b0d] font-black text-sm md:text-base tracking-widest">SYS_VIEWER // HIGH_RES_DATA</span>
+    </div>
+    
+    <button id="close-pdf-modal" class="font-black text-[#0a0b0d] hover:text-[#e3dfd5] transition-colors text-sm md:text-base px-2 cursor-pointer">
+      [X] CERRAR
+    </button>
+  </div>
+  
+  <div class="w-full max-w-[95vw] lg:max-w-[1400px] h-[90vh] bg-[#13151a] border-x-4 border-b-4 border-[#0a0b0d] relative shadow-[0_0_50px_rgba(255,115,0,0.2)] flex flex-col items-center overflow-auto custom-scrollbar" id="pdf-container">
+     
+     <div id="pdf-loader" class="absolute inset-0 flex flex-col items-center justify-center text-[#4ade80] bg-[#13151a] z-50 hidden">
+        <div class="w-12 h-12 border-4 border-dashed border-[#4ade80]/30 border-t-[#4ade80] rounded-full animate-spin"></div>
+        <span class="mt-4 font-mono font-bold text-xs tracking-widest animate-pulse">DECODIFICANDO DATOS...</span>
+     </div>
+     
+     <div id="pdf-pages-wrapper" class="w-full px-2 md:px-8 py-6 flex flex-col items-center gap-4"></div>
+  </div>
+
+</div>
+
 <style>
   .text-stroke-2 { -webkit-text-stroke: 1.5px; }
-  .stroke-accent { -webkit-text-stroke-color: #EE8027; }
+  .stroke-accent { -webkit-text-stroke-color: #ff7300; }
   .perspective-1000 { perspective: 1000px; }
   
   .clip-cartridge {
-    clip-path: polygon(
-      0 0, 
-      calc(100% - 12px) 0, 
-      100% 12px, 
-      100% 100%, 
-      0 100%
-    );
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
   }
   
   .card-opened {
     visibility: hidden;
     pointer-events: none;
   }
+  
+  #pdf-viewer-modal {
+    user-select: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 14px; 
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #0a0b0d; 
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4ade80; 
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #e3dfd5; 
+  }
 </style>
+
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
 <script>
   import { gsap } from 'gsap';
@@ -246,6 +319,10 @@ const proyectos = [
   gsap.registerPlugin(ScrollTrigger);
 
   function initPortfolio() {
+    // Referencia al contenedor padre de toda la sección para elevarlo
+    const section = document.getElementById('portfolio');
+
+    // === LÓGICA DE TARJETAS ===
     const cards = document.querySelectorAll('.js-project-card');
     let activeCard: HTMLElement | null = null;
     let isAnimating = false;
@@ -280,76 +357,82 @@ const proyectos = [
           isAnimating = true;
           activeCard = card;
 
-          const rect = card.getBoundingClientRect();
-          const targetX = (window.innerWidth / 2) - (rect.left + rect.width / 2);
-          const targetY = (window.innerHeight / 2) - (rect.top + rect.height / 2);
+          // 1. ELEVAR LA SECCIÓN DE PORTAFOLIO POR ENCIMA DEL RESTO DE LA PÁGINA (Previene Superposición)
+          if (section) section.style.zIndex = '999';
 
-          gsap.set(card, { zIndex: 50 });
-
+          // 2. DESAPARECER OTRAS TARJETAS
           cards.forEach(c => {
             if (c !== card) {
               gsap.to(c, { opacity: 0, scale: 0.9, pointerEvents: 'none', duration: 0.4 });
             }
           });
 
-          gsap.to(closedState, { opacity: 0, scale: 0.8, duration: 0.4, ease: "power2.in" });
-          gsap.set(openedState, { visibility: 'visible', pointerEvents: 'auto' });
-          
-          gsap.to(card, {
-            x: targetX,
-            y: targetY,
-            duration: 0.8,
-            ease: "power4.out",
-          });
+          // 3. CENTRAR CON LENIS DE MANERA MILIMÉTRICA
+          const lenis = (window as any).lenis;
+          if (lenis) {
+            const cardRect = card.getBoundingClientRect();
+            // Calcula exactamente cuánto scrollear para que la tarjeta quede en medio
+            const offset = -(window.innerHeight / 2) + (cardRect.height / 2);
+            
+            lenis.scrollTo(card, { 
+              offset: offset, 
+              duration: 0.6 // Tarda 600ms en llegar al centro
+            });
+          } else {
+             card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
 
-          gsap.to(openedState, {
-            opacity: 1,
-            scale: 1,
-            duration: 0.8,
-            ease: "power4.out",
-            delay: 0.1
-          });
+          // 4. ESPERAR A QUE TERMINE EL SCROLL PARA ABRIR Y BLOQUEAR
+          setTimeout(() => {
+            if (lenis) lenis.stop(); // 🛑 CONGELA EL SCROLL DEL USUARIO
 
-          gsap.fromTo(detailedDisc, { rotation: -180 }, {
-            rotation: 0,
-            duration: 1.2,
-            ease: "back.out(1.4)",
-            delay: 0.3,
-            onComplete: () => { isAnimating = false; }
-          });
+            // Recalculamos posición ahora que estamos centrados
+            const rect = card.getBoundingClientRect();
+            const targetX = (window.innerWidth / 2) - (rect.left + rect.width / 2);
+            const targetY = (window.innerHeight / 2) - (rect.top + rect.height / 2);
+
+            gsap.set(card, { zIndex: 50 });
+
+            gsap.to(closedState, { opacity: 0, scale: 0.8, duration: 0.4, ease: "power2.in" });
+            gsap.set(openedState, { visibility: 'visible', pointerEvents: 'auto' });
+            
+            gsap.to(card, { x: targetX, y: targetY, duration: 0.8, ease: "power4.out" });
+            gsap.to(openedState, { opacity: 1, scale: 1, duration: 0.8, ease: "power4.out", delay: 0.1 });
+
+            gsap.fromTo(detailedDisc, { rotation: -180 }, {
+              rotation: 0,
+              duration: 1.2,
+              ease: "back.out(1.4)",
+              delay: 0.3,
+              onComplete: () => { isAnimating = false; }
+            });
+          }, 650); // Damos 50ms extras de margen después del scroll
 
         } else {
+          // CLOSING / CERRANDO
           isAnimating = true;
           activeCard = null;
 
           gsap.to(openedState, {
-            opacity: 0,
-            scale: 0.8,
-            duration: 0.5,
-            ease: "power3.in",
-            onComplete: () => {
-              gsap.set(openedState, { visibility: 'hidden', pointerEvents: 'none' });
-            }
+            opacity: 0, scale: 0.8, duration: 0.5, ease: "power3.in",
+            onComplete: () => { gsap.set(openedState, { visibility: 'hidden', pointerEvents: 'none' }); }
           });
 
           gsap.to(card, {
-            x: 0,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.inOut",
-            onComplete: () => {
-              gsap.set(card, { zIndex: 10 });
-              isAnimating = false;
+            x: 0, y: 0, duration: 0.8, ease: "power3.inOut",
+            onComplete: () => { 
+              gsap.set(card, { zIndex: 10 }); 
+              
+              // DEVOLVEMOS TODO A LA NORMALIDAD
+              if (section) section.style.zIndex = '10'; // Bajamos la sección
+              const lenis = (window as any).lenis;
+              if (lenis) lenis.start(); // 🟢 REACTIVA EL SCROLL
+
+              isAnimating = false; 
             }
           });
 
-          gsap.to(closedState, {
-            opacity: 1,
-            scale: 1,
-            duration: 0.6,
-            delay: 0.2,
-            ease: "power2.out"
-          });
+          gsap.to(closedState, { opacity: 1, scale: 1, duration: 0.6, delay: 0.2, ease: "power2.out" });
 
           cards.forEach(c => {
             if (c !== card) {
@@ -360,9 +443,7 @@ const proyectos = [
       };
 
       card.addEventListener('click', () => {
-        if (!activeCard) {
-          toggleCard();
-        }
+        if (!activeCard) toggleCard();
       });
 
       if (closeBtn) {
@@ -372,7 +453,11 @@ const proyectos = [
       }
     });
 
+    // Cerrar dando click afuera, si el PDF modal no está abierto
     document.addEventListener('click', (e) => {
+      const modal = document.getElementById('pdf-viewer-modal');
+      if (modal && !modal.classList.contains('hidden')) return;
+
       if (activeCard && !isAnimating) {
         const target = e.target as HTMLElement;
         if (!activeCard.contains(target)) {
@@ -381,6 +466,97 @@ const proyectos = [
         }
       }
     });
+
+    // === LÓGICA DE PDF.JS BEHANCE STYLE (GIGANTE) ===
+    const pdfjsLib = (window as any)['pdfjs-dist/build/pdf'];
+    if(pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+
+    const pdfButtons = document.querySelectorAll('.js-view-pdf-btn');
+    const modal = document.getElementById('pdf-viewer-modal');
+    const closeModalBtn = document.getElementById('close-pdf-modal');
+    const pdfContainer = document.getElementById('pdf-container');
+    const pagesWrapper = document.getElementById('pdf-pages-wrapper');
+    const loader = document.getElementById('pdf-loader');
+    
+    let currentPdfDoc: any = null;
+
+    const renderAllPages = async (pdfDoc: any) => {
+      if (!pagesWrapper || !pdfContainer) return;
+      const containerWidth = pdfContainer.clientWidth;
+
+      for (let num = 1; num <= pdfDoc.numPages; num++) {
+        const page = await pdfDoc.getPage(num);
+        const unscaledViewport = page.getViewport({ scale: 1 });
+        
+        const scale = (containerWidth * 0.98) / unscaledViewport.width; 
+        const finalScale = scale > 4 ? 4 : scale; 
+        const viewport = page.getViewport({ scale: finalScale });
+
+        const canvas = document.createElement('canvas');
+        canvas.className = 'w-full shadow-2xl pointer-events-auto block mb-2 bg-white';
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        
+        pagesWrapper.appendChild(canvas);
+
+        const ctx = canvas.getContext('2d');
+        const renderCtx = { canvasContext: ctx, viewport: viewport };
+
+        await page.render(renderCtx).promise;
+      }
+    };
+
+    pdfButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const pdfUrl = (btn as HTMLElement).getAttribute('data-pdf');
+        
+        if (pdfUrl && modal && pdfjsLib && loader && pagesWrapper) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          loader.classList.remove('hidden'); 
+          pagesWrapper.innerHTML = ''; 
+          
+          setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.classList.add('opacity-100');
+          }, 10);
+
+          loader.innerHTML = `
+            <div class="w-12 h-12 border-4 border-dashed border-[#4ade80]/30 border-t-[#4ade80] rounded-full animate-spin"></div>
+            <span class="mt-4 font-mono font-bold text-xs tracking-widest animate-pulse">DECODIFICANDO DATOS...</span>
+          `;
+
+          pdfjsLib.getDocument(pdfUrl).promise.then((pdfDoc: any) => {
+            currentPdfDoc = pdfDoc;
+            loader.classList.add('hidden'); 
+            renderAllPages(pdfDoc);
+          }).catch((err: any) => {
+            loader.innerHTML = `<span class="text-[#ff2a2a]">[!] ERROR: NO SE PUDO DECODIFICAR EL ARCHIVO</span>`;
+            console.error("Error cargando PDF: ", err);
+          });
+        }
+      });
+    });
+
+    if (closeModalBtn && modal) {
+      closeModalBtn.addEventListener('click', () => {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          if(pagesWrapper) pagesWrapper.innerHTML = ''; 
+          currentPdfDoc = null;
+        }, 300);
+      });
+    }
+    
+    if (modal) {
+      modal.addEventListener('contextmenu', (e) => e.preventDefault());
+    }
   }
 
   document.addEventListener('DOMContentLoaded', initPortfolio);

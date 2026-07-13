@@ -3,8 +3,6 @@
 import Poster from './Poster.astro';
 import BgPoster from './BgPoster.astro';
 import LoaderUI from './LoaderUI.astro';
-import Ticker from './Ticker.astro';
-import BrandCenter from './BrandCenter.astro';
 
 const listaPersonajes = [
   { title: "FRONTEND",    name: "DEV_NULL",   id: "01", imgSrc: "/ASSETS/IMG/CHAR1.png" },
@@ -39,36 +37,20 @@ const listaPersonajes = [
     </div>
   </div>
 
-  <div id="intro-flash" class="absolute inset-0 z-50 bg-[#EE8027] opacity-0 pointer-events-none"></div>
-  <div id="machetazo-dark" class="absolute inset-0 z-50 bg-black opacity-0 pointer-events-none"></div>
+  <!-- Reemplazo a Naranja Principal y Dark -->
+  <div id="intro-flash" class="absolute inset-0 z-50 bg-[#ff7300] opacity-0 pointer-events-none"></div>
+  <div id="machetazo-dark" class="absolute inset-0 z-50 bg-[#0a0b0d] opacity-0 pointer-events-none"></div>
 
   <div id="main-posters-bg" class="absolute inset-0 z-10 opacity-0 pointer-events-none transform scale-105 bg-poster-grid">
     
-    <BgPoster posClasses="top-[5vh] md:top-[10vh] left-[2vw] md:left-[5vw] -rotate-12 z-0 scale-95" bgClass="bg-[#64bbb3]" headerText="SYS_ADMIN // 01" imgSrc="/ASSETS/IMG/CHAR1.png" imgClasses="opacity-90" footerText="FRONTEND_ARCHITECTURE" />
-    <BgPoster posClasses="bottom-[10vh] md:bottom-[15vh] left-[15vw] md:left-[22vw] rotate-6 z-10 w-48 md:w-60" bgClass="bg-white" headerText="CREATIVE_DIR // 02" headerBgClass="bg-black text-white" imgSrc="/ASSETS/IMG/CHAR2.png" containerBg="bg-neutral-900" footerText="VISUAL_INTERFACE_OS" />
-    <BgPoster posClasses="top-[-2vh] md:top-[4vh] left-[35vw] md:left-[38vw] -rotate-6 z-0" bgClass="bg-[#EACCB0]" headerText="EXECUTIVE // 03" headerBgClass="bg-[#ef4444] text-white" imgSrc="/ASSETS/IMG/CHAR3.png" imgClasses="brightness-90" containerBg="bg-white/20" footerText="CENTRAL_COMMAND_NET" />
-    <BgPoster posClasses="top-[15vh] md:top-[20vh] right-[2vw] md:right-[6vw] rotate-[15deg] z-0 scale-90" bgClass="bg-[#EE8027]" headerText="OVR_DRIVE // 04" headerBgClass="bg-black text-[#EE8027]" imgSrc="/ASSETS/IMG/CHAR4.png" containerBg="bg-neutral-800" footerText="MOTION_GRAPHICS_REQ" />
-    <BgPoster posClasses="bottom-[5vh] md:bottom-[10vh] right-[8vw] md:right-[16vw] -rotate-12 z-10 w-48 md:w-60" bgClass="bg-[#64bbb3]" headerText="SYSTEM LINK // 05" headerBgClass="bg-black text-white" imgSrc="/ASSETS/IMG/CHAR5.png" containerBg="bg-neutral-950" footerText="KITTEEK_LABS_CORE" />
-    <BgPoster posClasses="bottom-[25vh] md:bottom-[30vh] right-[35vw] md:right-[42vw] rotate-3 z-0 scale-95" bgClass="bg-[#EACCB0]" headerText="DATA_NODE // 06" headerBgClass="bg-black text-[#EACCB0]" imgSrc="/ASSETS/IMG/CHAR6.png" containerBg="bg-[#111]" footerText="DATABASE_SECURE" />
+    <BgPoster posClasses="top-[5vh] md:top-[10vh] left-[2vw] md:left-[5vw] -rotate-12 z-0 scale-95" bgClass="bg-[#4ade80]" headerText="SYS_ADMIN // 01" imgSrc="/ASSETS/IMG/CHAR1.png" imgClasses="opacity-90" footerText="FRONTEND_ARCHITECTURE" />
+    <BgPoster posClasses="bottom-[10vh] md:bottom-[15vh] left-[15vw] md:left-[22vw] rotate-6 z-10 w-48 md:w-60" bgClass="bg-[#e3dfd5]" headerText="CREATIVE_DIR // 02" headerBgClass="bg-[#0a0b0d] text-[#e3dfd5]" imgSrc="/ASSETS/IMG/CHAR2.png" containerBg="bg-[#13151a]" footerText="VISUAL_INTERFACE_OS" />
+    <BgPoster posClasses="top-[-2vh] md:top-[4vh] left-[35vw] md:left-[38vw] -rotate-6 z-0" bgClass="bg-[#6e7582]" headerText="EXECUTIVE // 03" headerBgClass="bg-[#ff7300] text-[#0a0b0d]" imgSrc="/ASSETS/IMG/CHAR3.png" imgClasses="brightness-90" containerBg="bg-[#e3dfd5]/20" footerText="CENTRAL_COMMAND_NET" />
+    <BgPoster posClasses="top-[15vh] md:top-[20vh] right-[2vw] md:right-[6vw] rotate-[15deg] z-0 scale-90" bgClass="bg-[#ff7300]" headerText="OVR_DRIVE // 04" headerBgClass="bg-[#0a0b0d] text-[#ff7300]" imgSrc="/ASSETS/IMG/CHAR4.png" containerBg="bg-[#13151a]" footerText="MOTION_GRAPHICS_REQ" />
+    <BgPoster posClasses="bottom-[5vh] md:bottom-[10vh] right-[8vw] md:right-[16vw] -rotate-12 z-10 w-48 md:w-60" bgClass="bg-[#4ade80]" headerText="SYSTEM LINK // 05" headerBgClass="bg-[#0a0b0d] text-[#e3dfd5]" imgSrc="/ASSETS/IMG/CHAR5.png" containerBg="bg-[#0a0b0d]" footerText="KITTEEK_LABS_CORE" />
+    <BgPoster posClasses="bottom-[25vh] md:bottom-[30vh] right-[35vw] md:right-[42vw] rotate-3 z-0 scale-95" bgClass="bg-[#e3dfd5]" headerText="DATA_NODE // 06" headerBgClass="bg-[#0a0b0d] text-[#e3dfd5]" imgSrc="/ASSETS/IMG/CHAR6.png" containerBg="bg-[#13151a]" footerText="DATABASE_SECURE" />
 
   </div>
 
   <LoaderUI />
-
-  <div class="absolute inset-0 z-20 flex items-center justify-center overflow-hidden pointer-events-none">
-    <Ticker 
-      id="ticker-wrap-1" 
-      variant="orange" 
-      trackClass="ticker-track" 
-      text="◆ KITTEEK DIGITAL STUDIO ◆ GRAPHIC DESIGN & WEB DEVELOPMENT ⚡︎ SYSTEM OVERDRIVE ◆ BRANDING EXTRACTION ➔ [DEPT_01] ◆ KITTEEK DIGITAL STUDIO ◆ GRAPHIC DESIGN & WEB DEVELOPMENT ⚡︎ SYSTEM OVERDRIVE ◆ BRANDING EXTRACTION ➔ [DEPT_01]" 
-    />
-    <Ticker 
-      id="ticker-wrap-2" 
-      variant="darkCyan" 
-      trackClass="ticker-track-reverse" 
-      text="// CRITICAL_CODE_DEPLOY // INTERFACE_DESIGN_SYSTEM ✖ ✖ ✖ // FULLSTACK_REPOSITORIES // PIXEL_PERFECT_RENDERING ⚡︎ RENDER_LOOP // CRITICAL_CODE_DEPLOY // INTERFACE_DESIGN_SYSTEM ✖ ✖ ✖ // FULLSTACK_REPOSITORIES // PIXEL_PERFECT_RENDERING ⚡︎ RENDER_LOOP" 
-    />
-    <BrandCenter />
-  </div>
-
 </div>

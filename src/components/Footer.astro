@@ -4,18 +4,6 @@
 ---
 
 <footer class="terminal-footer">
-  <!-- Barra Técnica Superior Separadora -->
-  <div class="footer-top-bar">
-    <div class="bar-left">
-      <span class="hazard-block"></span>
-      <span class="bar-tag">// TERMINAL_END_LOG</span>
-    </div>
-    <div class="hazard-stripes"></div>
-    <div class="bar-right">
-      <span class="bar-status-text">SYS_DISCONNECT_OK</span>
-      <span class="status-dot green"></span>
-    </div>
-  </div>
 
   <!-- Contenedor Principal en Cuadrícula -->
   <div class="footer-core-grid">
@@ -111,7 +99,7 @@
     --color-dark: #0a0b0d;
     --color-panel: #13151a;
     --color-orange: #ff7300;
-    --color-teal: #4ade80; /* Tono verde/cyan del status de tu web */
+    --color-teal: #4ade80;
     --color-beige: #e3dfd5;
     --color-muted: #6e7582;
     
@@ -123,67 +111,6 @@
     position: relative;
     border-top: 4px solid var(--color-beige);
     overflow: hidden;
-  }
-
-  /* --- BARRA SUPERIOR E HILERA DE ADVERTENCIA --- */
-  .footer-top-bar {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-panel);
-    border-bottom: 2px solid var(--color-beige);
-    height: 40px;
-    padding: 0 1.5rem;
-  }
-
-  .bar-left {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    white-space: nowrap;
-  }
-
-  .hazard-block {
-    width: 12px;
-    height: 12px;
-    background-color: var(--color-orange);
-  }
-
-  .bar-tag {
-    font-weight: bold;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-  }
-
-  .hazard-stripes {
-    flex-grow: 1;
-    height: 100%;
-    margin: 0 2rem;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent,
-      transparent 8px,
-      rgba(227, 223, 213, 0.1) 8px,
-      rgba(227, 223, 213, 0.1) 16px
-    );
-  }
-
-  .bar-right {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: var(--color-muted);
-  }
-
-  .status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-  }
-  .status-dot.green {
-    background-color: var(--color-teal);
-    box-shadow: 0 0 8px var(--color-teal);
   }
 
   /* --- REJILLA CENTRAL CARGADA --- */

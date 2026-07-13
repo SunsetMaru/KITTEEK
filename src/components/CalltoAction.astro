@@ -1,0 +1,185 @@
+---
+// TechSeparator.astro
+// Separador de transición: "Carga de Arsenal / Tech Stack"
+---
+
+<section class="tech-stream-section">
+  <!-- Etiqueta técnica lateral -->
+  <div class="stream-label">
+    <div class="status-light"></div>
+    <span class="label-text">SYS_TOOLS_ACTIVE</span>
+    <span class="label-arrows">>></span>
+  </div>
+
+  <!-- Contenedor del Marquee (Cinta en movimiento) -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <!-- Grupo 1 -->
+      <div class="tech-chip"><span class="prefix">[/]</span> LOREM_CORE</div>
+      <div class="tech-chip"><span class="prefix">[/]</span> IPSUM_JS</div>
+      <div class="tech-chip highlight"><span class="prefix">[+]</span> DOLOR_SYS</div>
+      <div class="tech-chip"><span class="prefix">[/]</span> AMET_NODE</div>
+      <div class="tech-chip"><span class="prefix">[/]</span> CONSECTETUR_UI</div>
+      <div class="tech-chip highlight"><span class="prefix">[+]</span> ELIT_UX</div>
+      
+      <!-- Grupo 2 (Duplicado para el bucle infinito) -->
+      <div class="tech-chip"><span class="prefix">[/]</span> LOREM_CORE</div>
+      <div class="tech-chip"><span class="prefix">[/]</span> IPSUM_JS</div>
+      <div class="tech-chip highlight"><span class="prefix">[+]</span> DOLOR_SYS</div>
+      <div class="tech-chip"><span class="prefix">[/]</span> AMET_NODE</div>
+      <div class="tech-chip"><span class="prefix">[/]</span> CONSECTETUR_UI</div>
+      <div class="tech-chip highlight"><span class="prefix">[+]</span> ELIT_UX</div>
+    </div>
+  </div>
+
+  <!-- Decoración lateral derecha -->
+  <div class="stream-cap">
+    <div class="barcode-mini"></div>
+  </div>
+</section>
+
+<style>
+  /* --- CONTENEDOR PRINCIPAL --- */
+  .tech-stream-section {
+    --bg-dark: #0a0b0d;
+    --color-panel: #13151a;
+    --color-orange: #ff7300;
+    --color-teal: #4ade80;
+    --color-muted: #6e7582;
+    --color-border: #2a2d35;
+
+    display: flex;
+    align-items: stretch;
+    height: 60px; /* Altura controlada, perfecta como separador */
+    background-color: var(--color-panel);
+    border-top: 2px solid var(--color-border);
+    border-bottom: 2px solid var(--color-border);
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    margin: 4rem 0; /* Margen para respirar entre secciones */
+  }
+
+  /* --- ETIQUETA IZQUIERDA --- */
+  .stream-label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: var(--color-orange);
+    color: var(--bg-dark);
+    padding: 0 1.5rem;
+    font-weight: 900;
+    font-size: 0.85rem;
+    z-index: 2;
+    position: relative;
+    /* Corte diagonal que apunta hacia la derecha */
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
+    min-width: 200px;
+  }
+
+  .status-light {
+    width: 8px;
+    height: 8px;
+    background-color: var(--bg-dark);
+    border-radius: 50%;
+    animation: blink-dark 1.5s infinite;
+  }
+
+  @keyframes blink-dark {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .label-text {
+    letter-spacing: 1px;
+  }
+
+  .label-arrows {
+    margin-left: auto;
+    padding-right: 15px;
+  }
+
+  /* --- ZONA CENTRAL: ANIMACIÓN MARQUEE --- */
+  .marquee-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-image: linear-gradient(90deg, rgba(10,11,13,0.8) 0%, transparent 5%, transparent 95%, rgba(10,11,13,0.8) 100%);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 2rem;
+    white-space: nowrap;
+    animation: scroll-left 20s linear infinite;
+  }
+
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Se desplaza la mitad porque el contenido está duplicado */
+  }
+
+  /* --- CHIPS DE TECNOLOGÍA --- */
+  .tech-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.03);
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--color-border);
+  }
+
+  .tech-chip .prefix {
+    color: var(--color-orange);
+  }
+
+  .tech-chip.highlight {
+    color: var(--color-teal);
+    border-color: rgba(74, 222, 128, 0.3);
+    background-color: rgba(74, 222, 128, 0.05);
+  }
+
+  /* --- TOPE DERECHO --- */
+  .stream-cap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    border-left: 1px dashed var(--color-border);
+    background-color: var(--bg-dark);
+    z-index: 2;
+  }
+
+  .barcode-mini {
+    height: 20px;
+    width: 40px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-muted),
+      var(--color-muted) 2px,
+      transparent 2px,
+      transparent 4px,
+      var(--color-muted) 4px,
+      var(--color-muted) 5px,
+      transparent 5px,
+      transparent 8px
+    );
+    opacity: 0.5;
+  }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .stream-label {
+      min-width: 50px;
+      padding: 0 1rem;
+      /* En móvil ocultamos el texto largo para dejar solo la luz y flechas, dando más espacio a la cinta */
+    }
+    .label-text { display: none; }
+    .label-arrows { padding-right: 5px; }
+    .stream-cap { display: none; }
+  }
+</style>
