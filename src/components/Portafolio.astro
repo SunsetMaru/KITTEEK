@@ -1,5 +1,5 @@
 ---
-// Portafolio.astro - ARCHIVO MODULAR COMPLETO
+// Portafolio.astro
 const proyectos = [
   { 
     id: "ARC-014", 
@@ -252,7 +252,6 @@ const proyectos = [
 
 </section>
 
-<!-- MODAL DEL VISOR DE PDF SEGURO BEHANCE-STYLE -->
 <div id="pdf-viewer-modal" class="fixed inset-0 z-[9999] bg-[#0a0b0d]/95 backdrop-blur-md hidden flex-col items-center justify-center p-2 md:p-6 opacity-0 transition-opacity duration-300">
   
   <div class="w-full max-w-[95vw] lg:max-w-[1400px] bg-[#4ade80] flex justify-between items-center px-4 py-3 border-x-4 border-t-4 border-[#0a0b0d]">
@@ -319,10 +318,8 @@ const proyectos = [
   gsap.registerPlugin(ScrollTrigger);
 
   function initPortfolio() {
-    // Referencia al contenedor padre de toda la sección para elevarlo
     const section = document.getElementById('portfolio');
 
-    // === LÓGICA DE TARJETAS ===
     const cards = document.querySelectorAll('.js-project-card');
     let activeCard: HTMLElement | null = null;
     let isAnimating = false;
@@ -357,36 +354,30 @@ const proyectos = [
           isAnimating = true;
           activeCard = card;
 
-          // 1. ELEVAR LA SECCIÓN DE PORTAFOLIO POR ENCIMA DEL RESTO DE LA PÁGINA (Previene Superposición)
           if (section) section.style.zIndex = '999';
 
-          // 2. DESAPARECER OTRAS TARJETAS
           cards.forEach(c => {
             if (c !== card) {
               gsap.to(c, { opacity: 0, scale: 0.9, pointerEvents: 'none', duration: 0.4 });
             }
           });
 
-          // 3. CENTRAR CON LENIS DE MANERA MILIMÉTRICA
           const lenis = (window as any).lenis;
           if (lenis) {
             const cardRect = card.getBoundingClientRect();
-            // Calcula exactamente cuánto scrollear para que la tarjeta quede en medio
             const offset = -(window.innerHeight / 2) + (cardRect.height / 2);
             
             lenis.scrollTo(card, { 
               offset: offset, 
-              duration: 0.6 // Tarda 600ms en llegar al centro
+              duration: 0.6
             });
           } else {
              card.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
 
-          // 4. ESPERAR A QUE TERMINE EL SCROLL PARA ABRIR Y BLOQUEAR
           setTimeout(() => {
-            if (lenis) lenis.stop(); // 🛑 CONGELA EL SCROLL DEL USUARIO
+            if (lenis) lenis.stop();
 
-            // Recalculamos posición ahora que estamos centrados
             const rect = card.getBoundingClientRect();
             const targetX = (window.innerWidth / 2) - (rect.left + rect.width / 2);
             const targetY = (window.innerHeight / 2) - (rect.top + rect.height / 2);
@@ -406,10 +397,9 @@ const proyectos = [
               delay: 0.3,
               onComplete: () => { isAnimating = false; }
             });
-          }, 650); // Damos 50ms extras de margen después del scroll
+          }, 650);
 
         } else {
-          // CLOSING / CERRANDO
           isAnimating = true;
           activeCard = null;
 
@@ -424,9 +414,9 @@ const proyectos = [
               gsap.set(card, { zIndex: 10 }); 
               
               // DEVOLVEMOS TODO A LA NORMALIDAD
-              if (section) section.style.zIndex = '10'; // Bajamos la sección
+              if (section) section.style.zIndex = '10';
               const lenis = (window as any).lenis;
-              if (lenis) lenis.start(); // 🟢 REACTIVA EL SCROLL
+              if (lenis) lenis.start();
 
               isAnimating = false; 
             }
@@ -453,7 +443,6 @@ const proyectos = [
       }
     });
 
-    // Cerrar dando click afuera, si el PDF modal no está abierto
     document.addEventListener('click', (e) => {
       const modal = document.getElementById('pdf-viewer-modal');
       if (modal && !modal.classList.contains('hidden')) return;
@@ -467,7 +456,7 @@ const proyectos = [
       }
     });
 
-    // === LÓGICA DE PDF.JS BEHANCE STYLE (GIGANTE) ===
+    // === PDF.JS BEHANCE STYLE ===
     const pdfjsLib = (window as any)['pdfjs-dist/build/pdf'];
     if(pdfjsLib) {
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';

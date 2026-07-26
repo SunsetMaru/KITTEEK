@@ -1,9 +1,6 @@
 import { Application } from 'pixi.js';
 import { gsap } from 'gsap';
 
-// ==========================================
-// 1. INICIALIZAR EL LIENZO DE PIXI.JS
-// ==========================================
 const pixiContainer = document.getElementById('pixi-bg');
 const app = new Application();
 
@@ -19,9 +16,6 @@ async function initBackground() {
 }
 initBackground();
 
-// ==========================================
-// 2. LOOPS INFINITOS DE FONDO (INTERFAZ)
-// ==========================================
 gsap.to('#ticker-wrap-1 .ticker-track', { xPercent: -50, ease: 'none', duration: 26, repeat: -1 });
 gsap.to('#ticker-wrap-2 .ticker-track-reverse', { xPercent: -50, ease: 'none', duration: 20, repeat: -1 });
 
@@ -35,7 +29,6 @@ gsap.utils.toArray('.bg-poster-grid').forEach((poster, index) => {
     });
 });
 
-// --- SUB-TIMELINE REUTILIZABLE PARA EL GLITCH (ESTROBOSCÓPICO) ---
 function crearEfectoGlitch() {
     const glitchTL = gsap.timeline();
     glitchTL
@@ -54,15 +47,10 @@ function crearEfectoGlitch() {
     return glitchTL;
 }
 
-// ==========================================
-// 3. SECUENCIA DE IMPACTO CINEMÁTICO COREOGRAFIADA
-// ==========================================
 const introTimeline = gsap.timeline();
 
-// Seteo de estados antes de la detonación
 gsap.set(['#loader-top', '#loader-bottom', '#ticker-wrap-1', '#ticker-wrap-2', '#character-container', '#main-posters-bg'], { opacity: 0 });
 
-// PRE-ALINEACIÓN: Mandamos los posters laterales hacia atrás del primero
 const posters = gsap.utils.toArray('.carousel-poster');
 posters.forEach((poster, i) => {
     if(i === 0) {
@@ -74,46 +62,35 @@ posters.forEach((poster, i) => {
 });
 
 introTimeline
-    // GOLPE 1: Flash estroboscópico agresivo (Actualizado con colores nuevos)
     .to('body', { backgroundColor: '#ffffff', duration: 0.05 })
-    .to('body', { backgroundColor: '#4ade80', duration: 0.05 }) // Color Teal
-    .to('body', { backgroundColor: '#0a0b0d', duration: 0.1 }) // Color Dark
+    .to('body', { backgroundColor: '#4ade80', duration: 0.05 })
+    .to('body', { backgroundColor: '#0a0b0d', duration: 0.1 })
 
-    // GOLPE 2: RÁFAGA ESTROBOSCÓPICA DE AMBOS LOGOS (GLITCH INICIAL)
     .add(crearEfectoGlitch())
 
-    // Inicializar capa contenedora de la intro
     .to('#intro-posters', { opacity: 1, duration: 0.01 })
 
-    // === ARREGLO DE APARICIÓN EN ABANICO DISTRIBUIDO ===
     .to(posters[0], { opacity: 1, scale: 1, duration: 0.25, ease: 'back.out(2)' })
     .to(posters.slice(1), { opacity: 1, scale: 1, x: 0, duration: 0.35, ease: 'power4.out', stagger: 0.01 }, '-=0.1')
 
-    // FASE FOTOS: Carga de imágenes
     .to('.poster-img', { opacity: 1, scale: 1, duration: 0.25, ease: 'power3.out', stagger: 0.02 }, '-=0.25')
 
-    // FASE TEXTOS: Despliegue de datos
     .to('.poster-data', { opacity: 1, y: 0, duration: 0.2, ease: 'elastic.out(1, 0.5)', stagger: 0.03 }, '-=0.2')
 
-    // === TIEMPO DE PAUSA Y CONTEMPLACIÓN ===
     .to({}, { duration: 0.1 })
 
-    // CORRIDA VELOZ
     .to('.poster-carousel-track', { scaleY: 0.85, duration: 0.12, ease: 'power3.in' })
     .to('.poster-carousel-track', { x: () => `-${window.innerWidth * 1.5}px`, duration: 0.55, ease: 'linear' }, '-=0.12')
 
-    // MACHETAZO SECO: Apagón intermedio absoluto
     .to('#machetazo-dark', { opacity: 1, duration: 0.03 }) 
     .to('.poster-carousel-track', { x: () => `-${window.innerWidth * 2.5}px`, duration: 0.6, ease: 'power1.in' }, '-=0.12')
     .to('#machetazo-dark', { opacity: 0, duration: 0.04 }) 
 
-    // GOLPE INTERMEDIO: Destello de barras
     .to(['#ticker-wrap-1', '#ticker-wrap-2'], { opacity: 1, scaleY: 2, duration: 0.05 })
     .to(['#ticker-wrap-1', '#ticker-wrap-2'], { opacity: 0, scaleY: 1, duration: 0.05 })
     .to(['#ticker-wrap-1', '#ticker-wrap-2'], { opacity: 0.8, duration: 0.04 })
     .to(['#ticker-wrap-1', '#ticker-wrap-2'], { opacity: 0, duration: 0.03 })
 
-    // ESTABILIZACIÓN DEFINITIVA
     .to('body', { backgroundColor: '#0a0b0d', duration: 0.1 }) 
     
     .to('#intro-posters', { duration: 0.01, onComplete: () => {
@@ -131,9 +108,6 @@ introTimeline
     // Entrada fluida de los tickers
     .to(['#ticker-wrap-1', '#ticker-wrap-2'], { opacity: 1, duration: 0.3, stagger: 0.05 }, '-=0.5');
 
-// ==========================================
-// 4. SISTEMA DE CONTROL DE PORCENTAJE (LOADING)
-// ==========================================
 const loadStatus = { percentage: 0 };
 introTimeline.to(loadStatus, {
     percentage: 100,
@@ -150,7 +124,6 @@ introTimeline.to(loadStatus, {
         const exitTimeline = gsap.timeline();
 
         exitTimeline
-            // Pausa contemplando el 100% de la barra
             .to({}, { duration: 0.1 })
             
             .set(['#loader-top', '#loader-bottom', '#ticker-wrap-1', '#ticker-wrap-2', '#main-posters-bg'], {
@@ -160,7 +133,7 @@ introTimeline.to(loadStatus, {
             .add(crearEfectoGlitch())
             
             .to('body', { backgroundColor: '#ffffff', duration: 0.04 })
-            .to('body', { backgroundColor: '#ff7300', duration: 0.04 }) // Naranja
+            .to('body', { backgroundColor: '#ff7300', duration: 0.04 })
             .to('body', { 
                 backgroundColor: '#0a0b0d', // Dark
                 duration: 0.06,
@@ -180,10 +153,8 @@ introTimeline.to(loadStatus, {
                         }
                     });
 
-                    // Devolvemos el control al usuario
                     document.body.classList.remove('overflow-hidden', 'select-none');
                     
-                    // === CONEXIÓN CON LENIS ===
                     if (window.lenis) {
                         window.lenis.start();
                         window.lenis.resize();
