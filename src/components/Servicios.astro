@@ -49,13 +49,13 @@ const servicios = [
 ];
 ---
 
-<section id="services-deck" class="relative w-full font-sans select-none pt-24 pb-32 bg-[#0a0b0d]">
+<section id="services-deck" class="relative w-full font-sans select-none pt-16 md:pt-24 pb-20 md:pb-32 bg-[#0a0b0d]">
 
-  <div class="relative z-20 w-full max-w-[1500px] mx-auto px-4 md:px-8 xl:px-0 mb-20 text-center">
-    <h2 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] text-[#e3dfd5] drop-shadow-[4px_4px_0px_#13151a]">
+  <div class="relative z-20 w-full max-w-[1500px] mx-auto px-4 md:px-8 xl:px-0 mb-12 md:mb-20 text-center">
+    <h2 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.85] text-[#e3dfd5] drop-shadow-[4px_4px_0px_#13151a]">
       NUESTROS<span class="text-transparent text-stroke-2 stroke-accent"> SERVICIOS</span>
     </h2>
-    <p class="text-[#e3dfd5]/40 font-mono text-xs md:text-sm max-w-lg mx-auto mt-6">
+    <p class="text-[#e3dfd5]/40 font-mono text-xs md:text-sm max-w-lg mx-auto mt-4 md:mt-6 px-2">
       > HAZ CLIC EN UN CARTUCHO PARA EXTRAER LA CINTA Y LEER LOS DATOS. CLIC DE NUEVO PARA CERRARLO.
     </p>
   </div>
@@ -64,52 +64,52 @@ const servicios = [
     <div id="cassette-track" class="flex w-max">
       
       <!-- PRIMER GRUPO DE ELEMENTOS -->
-      <div class="flex gap-24 md:gap-32 pr-24 md:pr-32 shrink-0 px-4 md:px-8 xl:px-[calc((100vw-1500px)/2)]">
+      <div class="flex gap-16 sm:gap-24 md:gap-32 pr-16 sm:pr-24 md:pr-32 shrink-0 px-4 md:px-8 xl:px-[calc((100vw-1500px)/2)]">
         {servicios.map((servicio, index) => (
-          <article class="cassette-scene group cursor-pointer shrink-0 transition-z duration-300 relative w-[180px] md:w-[220px]">
+          <article class="cassette-scene group cursor-pointer shrink-0 transition-z duration-300 relative w-[150px] sm:w-[180px] md:w-[220px]">
             
-            <div class="cassette-box relative w-full h-[280px] md:h-[340px] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+            <div class="cassette-box relative w-full h-[230px] sm:h-[280px] md:h-[340px] transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
               <div class="box-back absolute inset-0 bg-[#0a0b0d] border-[2px] border-[#e3dfd5]/10 z-0 shadow-2xl"></div>
 
               <div class="tape-slide absolute inset-0 z-10 transition-transform duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]">
-                <div class="absolute top-1/2 left-1/2 w-[260px] h-[160px] md:w-[320px] md:h-[200px] -translate-x-1/2 -translate-y-1/2 -rotate-90 bg-[#13151a] rounded-lg border-[3px] border-[#0a0b0d] shadow-[inset_0_0_15px_#0a0b0d,5px_5px_15px_rgba(10,11,13,0.8)] overflow-hidden flex flex-col justify-between">
+                <div class="absolute top-1/2 left-1/2 w-[210px] h-[130px] sm:w-[260px] sm:h-[160px] md:w-[320px] md:h-[200px] -translate-x-1/2 -translate-y-1/2 -rotate-90 bg-[#13151a] rounded-lg border-[3px] border-[#0a0b0d] shadow-[inset_0_0_15px_#0a0b0d,5px_5px_15px_rgba(10,11,13,0.8)] overflow-hidden flex flex-col justify-between">
                   <div class="absolute inset-0 opacity-30 pointer-events-none mix-blend-overlay" style="background-image: linear-gradient(#0a0b0d 1px, transparent 1px), linear-gradient(90deg, #0a0b0d 1px, transparent 1px); background-size: 8px 8px;"></div>
                   <div class="absolute top-1.5 left-1.5 w-2 h-2 rounded-full bg-[#0a0b0d] flex items-center justify-center border border-[#e3dfd5]/10 z-20"><div class="w-full h-[1px] bg-[#e3dfd5]/30 transform rotate-45"></div></div>
                   <div class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#0a0b0d] flex items-center justify-center border border-[#e3dfd5]/10 z-20"><div class="w-full h-[1px] bg-[#e3dfd5]/30 transform -rotate-12"></div></div>
                   <div class="absolute bottom-1.5 left-1.5 w-2 h-2 rounded-full bg-[#0a0b0d] flex items-center justify-center border border-[#e3dfd5]/10 z-20"><div class="w-full h-[1px] bg-[#e3dfd5]/30 transform rotate-90"></div></div>
                   <div class="absolute bottom-1.5 right-1.5 w-2 h-2 rounded-full bg-[#0a0b0d] flex items-center justify-center border border-[#e3dfd5]/10 z-20"><div class="w-full h-[1px] bg-[#e3dfd5]/30 transform rotate-[120deg]"></div></div>
 
-                  <div class="absolute top-[12%] bottom-[22%] left-[12%] right-[12%] bg-[#e3dfd5] rounded-sm z-10 flex flex-col p-2 md:p-3 border border-[#e3dfd5]/50 shadow-inner overflow-hidden">
+                  <div class="absolute top-[12%] bottom-[22%] left-[12%] right-[12%] bg-[#e3dfd5] rounded-sm z-10 flex flex-col p-1.5 sm:p-2 md:p-3 border border-[#e3dfd5]/50 shadow-inner overflow-hidden">
                     <img src={servicio.img} alt="Character" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale-[40%] pointer-events-none z-0" />
-                    <div class="relative z-10 flex justify-between items-start border-b-2 border-[#0a0b0d]/80 pb-1 mb-2">
+                    <div class="relative z-10 flex justify-between items-start border-b-2 border-[#0a0b0d]/80 pb-1 mb-1 sm:mb-2">
                        <div class="flex flex-col">
-                         <span class="text-[#0a0b0d] font-black text-sm md:text-base leading-none uppercase tracking-tighter" style={`color: ${servicio.color}; text-shadow: 1px 1px 0px #e3dfd5;`}>{servicio.titulo.split('_')[0]}</span>
-                         <span class="text-[#0a0b0d]/80 font-bold text-[8px] md:text-[10px] leading-none uppercase bg-[#e3dfd5]/50 inline-block px-1 w-max">{servicio.titulo.split('_')[1] || 'SYS'}</span>
+                         <span class="text-[#0a0b0d] font-black text-xs sm:text-sm md:text-base leading-none uppercase tracking-tighter" style={`color: ${servicio.color}; text-shadow: 1px 1px 0px #e3dfd5;`}>{servicio.titulo.split('_')[0]}</span>
+                         <span class="text-[#0a0b0d]/80 font-bold text-[7px] sm:text-[8px] md:text-[10px] leading-none uppercase bg-[#e3dfd5]/50 inline-block px-1 w-max">{servicio.titulo.split('_')[1] || 'SYS'}</span>
                        </div>
                        <div class="flex flex-col items-end bg-[#e3dfd5]/70 p-0.5 rounded-sm">
-                         <span class="text-[#ff7300] border border-[#ff7300] px-1 text-[7px] font-black uppercase mb-0.5">MUTE</span>
-                         <span class="text-[#ff7300] text-[9px] font-black uppercase">A SIDE</span>
+                         <span class="text-[#ff7300] border border-[#ff7300] px-1 text-[6px] sm:text-[7px] font-black uppercase mb-0.5">MUTE</span>
+                         <span class="text-[#ff7300] text-[8px] sm:text-[9px] font-black uppercase">A SIDE</span>
                        </div>
                     </div>
 
-                    <div class="relative z-10 w-[80%] mx-auto h-[35px] md:h-[45px] bg-[#13151a] rounded-3xl mt-auto mb-2 flex items-center justify-between px-2 md:px-4 border-2 border-[#6e7582] shadow-[inset_0_4px_10px_#0a0b0d]">
-                       <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#e3dfd5] flex items-center justify-center border border-[#6e7582] shadow-sm"><div class="w-3 h-3 md:w-4 md:h-4 bg-[#13151a] rounded-full shadow-[inset_0_0_3px_#e3dfd5] flex items-center justify-center relative"><div class="w-[2px] h-full bg-[#e3dfd5]/50 absolute"></div><div class="w-full h-[2px] absolute bg-[#e3dfd5]/50"></div></div></div>
-                       <div class="flex-1 h-full bg-[#0a0b0d]/60 border-x border-[#e3dfd5]/10 mx-2 flex items-center justify-center overflow-hidden relative"><div class="w-[90%] h-4 bg-[#0a0b0d] opacity-80 shadow-[inset_0_2px_4px_#0a0b0d]"></div></div>
-                       <div class="w-6 h-6 md:w-8 md:h-8 rounded-full bg-[#e3dfd5] flex items-center justify-center border border-[#6e7582] shadow-sm"><div class="w-3 h-3 md:w-4 md:h-4 bg-[#13151a] rounded-full shadow-[inset_0_0_3px_#e3dfd5] flex items-center justify-center relative"><div class="w-[2px] h-full bg-[#e3dfd5]/50 absolute"></div><div class="w-full h-[2px] absolute bg-[#e3dfd5]/50"></div></div></div>
+                    <div class="relative z-10 w-[85%] sm:w-[80%] mx-auto h-[28px] sm:h-[35px] md:h-[45px] bg-[#13151a] rounded-3xl mt-auto mb-1 sm:mb-2 flex items-center justify-between px-1.5 sm:px-2 md:px-4 border-2 border-[#6e7582] shadow-[inset_0_4px_10px_#0a0b0d]">
+                       <div class="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded-full bg-[#e3dfd5] flex items-center justify-center border border-[#6e7582] shadow-sm"><div class="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-[#13151a] rounded-full shadow-[inset_0_0_3px_#e3dfd5] flex items-center justify-center relative"><div class="w-[2px] h-full bg-[#e3dfd5]/50 absolute"></div><div class="w-full h-[2px] absolute bg-[#e3dfd5]/50"></div></div></div>
+                       <div class="flex-1 h-full bg-[#0a0b0d]/60 border-x border-[#e3dfd5]/10 mx-1 sm:mx-2 flex items-center justify-center overflow-hidden relative"><div class="w-[90%] h-3 sm:h-4 bg-[#0a0b0d] opacity-80 shadow-[inset_0_2px_4px_#0a0b0d]"></div></div>
+                       <div class="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 rounded-full bg-[#e3dfd5] flex items-center justify-center border border-[#6e7582] shadow-sm"><div class="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-[#13151a] rounded-full shadow-[inset_0_0_3px_#e3dfd5] flex items-center justify-center relative"><div class="w-[2px] h-full bg-[#e3dfd5]/50 absolute"></div><div class="w-full h-[2px] absolute bg-[#e3dfd5]/50"></div></div></div>
                     </div>
 
-                    <div class="relative z-10 w-full overflow-hidden text-ellipsis whitespace-nowrap text-[7px] md:text-[9px] font-mono text-[#0a0b0d] font-bold opacity-90 tracking-tight bg-[#e3dfd5]/50 px-1">
+                    <div class="relative z-10 w-full overflow-hidden text-ellipsis whitespace-nowrap text-[6px] sm:text-[7px] md:text-[9px] font-mono text-[#0a0b0d] font-bold opacity-90 tracking-tight bg-[#e3dfd5]/50 px-1">
                       1.{servicio.titulo} 2.SYSTEM_OVERRIDE
                     </div>
                   </div>
 
-                  <div class="absolute bottom-0 left-[15%] right-[15%] h-[18%] bg-[#0a0b0d] border-t-2 border-x-2 border-[#e3dfd5]/5 rounded-t-xl z-10 flex justify-center items-center gap-4 px-2 shadow-[-5px_-5px_15px_rgba(10,11,13,0.6)]">
-                     <div class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0b0d] shadow-[inset_0_2px_5px_#0a0b0d] border border-[#e3dfd5]/5 relative"><div class="absolute inset-[3px] rounded-full bg-[#13151a] border border-[#e3dfd5]/10"></div></div>
-                     <div class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#0a0b0d] shadow-[inset_0_2px_5px_#0a0b0d] border border-[#e3dfd5]/5 relative"><div class="absolute inset-[3px] rounded-full bg-[#13151a] border border-[#e3dfd5]/10"></div></div>
+                  <div class="absolute bottom-0 left-[15%] right-[15%] h-[18%] bg-[#0a0b0d] border-t-2 border-x-2 border-[#e3dfd5]/5 rounded-t-xl z-10 flex justify-center items-center gap-2 sm:gap-4 px-2 shadow-[-5px_-5px_15px_rgba(10,11,13,0.6)]">
+                     <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full bg-[#0a0b0d] shadow-[inset_0_2px_5px_#0a0b0d] border border-[#e3dfd5]/5 relative"><div class="absolute inset-[2px] sm:inset-[3px] rounded-full bg-[#13151a] border border-[#e3dfd5]/10"></div></div>
+                     <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full bg-[#0a0b0d] shadow-[inset_0_2px_5px_#0a0b0d] border border-[#e3dfd5]/5 relative"><div class="absolute inset-[2px] sm:inset-[3px] rounded-full bg-[#13151a] border border-[#e3dfd5]/10"></div></div>
                   </div>
                   
-                  <div class="absolute bottom-2 left-3 w-4 h-2 md:w-5 md:h-2.5 bg-[#0a0b0d] rounded-sm border border-[#e3dfd5]/10 z-10 shadow-inner"></div>
-                  <div class="absolute bottom-2 right-3 w-4 h-2 md:w-5 md:h-2.5 bg-[#0a0b0d] rounded-sm border border-[#e3dfd5]/10 z-10 shadow-inner"></div>
+                  <div class="absolute bottom-1.5 left-2 w-3 h-1.5 sm:w-4 sm:h-2 md:w-5 md:h-2.5 bg-[#0a0b0d] rounded-sm border border-[#e3dfd5]/10 z-10 shadow-inner"></div>
+                  <div class="absolute bottom-1.5 right-2 w-3 h-1.5 sm:w-4 sm:h-2 md:w-5 md:h-2.5 bg-[#0a0b0d] rounded-sm border border-[#e3dfd5]/10 z-10 shadow-inner"></div>
                 </div>
               </div>
 
@@ -123,9 +123,9 @@ const servicios = [
                  
                  <div class="absolute inset-0 bg-gradient-to-br from-[#e3dfd5]/10 via-transparent to-transparent opacity-50"></div>
                  
-                 <div class="relative z-30 p-4 h-full flex flex-col justify-end">
+                 <div class="relative z-30 p-3 sm:p-4 h-full flex flex-col justify-end">
                    <div>
-                      <h3 class="text-3xl md:text-4xl font-black text-[#e3dfd5] tracking-tighter leading-none uppercase drop-shadow-[2px_2px_0px_#0a0b0d]">
+                      <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-[#e3dfd5] tracking-tighter leading-none uppercase drop-shadow-[2px_2px_0px_#0a0b0d]">
                         {servicio.titulo.split('_')[0]}<br/>
                         <span class="text-[#13151a]" style={`-webkit-text-stroke: 1px ${servicio.color};`}>{servicio.titulo.split('_')[1] || ''}</span>
                       </h3>
@@ -133,23 +133,23 @@ const servicios = [
                  </div>
               </div>
 
-              <div class="box-spine absolute top-0 w-[40px] h-full bg-[#13151a] border-y-[2px] border-l-[2px] border-[#e3dfd5]/20 z-30 flex flex-col justify-between items-center py-4">
-                <div class="w-6 h-6 border border-[#e3dfd5]/20 flex items-center justify-center bg-[#0a0b0d]">
-                  <span class="text-[#e3dfd5] text-[8px] font-mono">{index + 1}</span>
+              <div class="box-spine absolute top-0 w-[30px] sm:w-[35px] md:w-[40px] h-full bg-[#13151a] border-y-[2px] border-l-[2px] border-[#e3dfd5]/20 z-30 flex flex-col justify-between items-center py-3 sm:py-4">
+                <div class="w-5 h-5 sm:w-6 sm:h-6 border border-[#e3dfd5]/20 flex items-center justify-center bg-[#0a0b0d]">
+                  <span class="text-[#e3dfd5] text-[7px] sm:text-[8px] font-mono">{index + 1}</span>
                </div>
-                <div class="transform -rotate-90 text-[10px] font-mono text-[#e3dfd5] font-black tracking-widest whitespace-nowrap w-[200px] text-center" style={`color: ${servicio.color};`}>
+                <div class="transform -rotate-90 text-[8px] sm:text-[9px] md:text-[10px] font-mono text-[#e3dfd5] font-black tracking-widest whitespace-nowrap w-[160px] sm:w-[200px] text-center" style={`color: ${servicio.color};`}>
                   {servicio.titulo}
                 </div>
-                <div class="w-4 h-6 border-b-2 border-[#e3dfd5]/30"></div>
+                <div class="w-3 sm:w-4 h-5 sm:h-6 border-b-2 border-[#e3dfd5]/30"></div>
               </div>
             </div>
 
-            <!-- PANEL DE INFORMACIÓN -->
-            <div class="service-info absolute top-0 left-[190%] md:left-[210%] w-[280px] sm:w-[340px] md:w-[400px] h-full invisible opacity-0 pointer-events-none">
+            <!-- PANEL DE INFORMACIÓN (En tablets/móviles aparece abajo centrado) -->
+            <div class="service-info absolute top-[110%] lg:top-0 left-1/2 lg:left-[210%] -translate-x-1/2 lg:translate-x-0 w-[calc(100vw-2rem)] max-w-[340px] sm:max-w-[400px] lg:w-[400px] h-auto lg:h-full invisible opacity-0 pointer-events-none z-50">
               
-              <div class="hidden md:block absolute top-[10%] -left-[40px] w-[40px] h-[80%] border-y-[2px] border-r-[2px] border-[#e3dfd5]/5 bg-[#0a0b0d]/80 backdrop-blur-sm z-0" style={`border-right-color: ${servicio.color}`}></div>
+              <div class="hidden lg:block absolute top-[10%] -left-[40px] w-[40px] h-[80%] border-y-[2px] border-r-[2px] border-[#e3dfd5]/5 bg-[#0a0b0d]/80 backdrop-blur-sm z-0" style={`border-right-color: ${servicio.color}`}></div>
 
-              <div class="bg-[#0a0b0d] w-full h-full border-[1px] border-[#e3dfd5]/10 relative shadow-[30px_10px_50px_rgba(10,11,13,0.95)] flex flex-col overflow-hidden z-10">
+              <div class="bg-[#0a0b0d] w-full border-[1px] border-[#e3dfd5]/10 relative shadow-[0_20px_50px_rgba(10,11,13,0.95)] flex flex-col overflow-hidden z-10 rounded-xl lg:rounded-none">
                 
                 <div class="h-1.5 w-full flex">
                   <div class="w-1/3 h-full bg-[#e3dfd5]/20"></div>
@@ -158,9 +158,9 @@ const servicios = [
 
                 <div class="absolute inset-0 bg-[radial-gradient(rgba(227,223,213,0.03)_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none z-0"></div>
                 
-                <div class="p-5 md:p-6 flex flex-col h-full relative z-10">
+                <div class="p-4 sm:p-5 md:p-6 flex flex-col h-full relative z-10 text-center lg:text-left">
                   
-                  <div class="flex justify-between items-center border-b border-[#e3dfd5]/10 pb-2 mb-4">
+                  <div class="flex justify-between items-center border-b border-[#e3dfd5]/10 pb-2 mb-3 sm:mb-4">
                     <span class="text-[8px] font-mono text-[#e3dfd5]/50 tracking-[0.2em] uppercase">SYS_FILE // {servicio.id}</span>
                     <div class="flex items-center gap-1.5">
                       <span class="text-[8px] font-mono animate-pulse" style={`color: ${servicio.color}`}>ONLINE</span>
@@ -168,34 +168,34 @@ const servicios = [
                     </div>
                   </div>
 
-                  <div class="flex items-start justify-between mb-5">
+                  <div class="flex items-center justify-center lg:justify-start mb-4">
                     <div>
-                      <h3 class="text-3xl md:text-4xl font-black text-[#e3dfd5] tracking-tighter uppercase leading-none drop-shadow-[2px_2px_0px_rgba(10,11,13,1)]">
+                      <h3 class="text-2xl sm:text-3xl lg:text-4xl font-black text-[#e3dfd5] tracking-tighter uppercase leading-none drop-shadow-[2px_2px_0px_rgba(10,11,13,1)]">
                         {servicio.titulo.split('_')[0]}<br/>
                         <span class="text-transparent drop-shadow-none" style={`-webkit-text-stroke: 1px ${servicio.color};`}>{servicio.titulo.split('_')[1] || 'SYS'}</span>
                       </h3>
                     </div>
                   </div>
                   
-                  <div class="grid grid-cols-2 gap-3 mb-5">
-                    <div class="bg-[#13151a] p-2.5 border-l-[3px] shadow-[inset_0_2px_10px_rgba(10,11,13,0.5)]" style={`border-color: ${servicio.color}`}>
+                  <div class="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
+                    <div class="bg-[#13151a] p-2 sm:p-2.5 border-l-[3px] shadow-[inset_0_2px_10px_rgba(10,11,13,0.5)] text-center lg:text-left" style={`border-color: ${servicio.color}`}>
                       <span class="block text-[7px] text-[#e3dfd5]/40 font-mono mb-1 uppercase tracking-widest">CATEGORÍA</span>
-                      <span class="text-[10px] text-[#e3dfd5] font-mono font-bold tracking-wider uppercase">{servicio.tag}</span>
+                      <span class="text-[9px] sm:text-[10px] text-[#e3dfd5] font-mono font-bold tracking-wider uppercase">{servicio.tag}</span>
                     </div>
-                    <div class="bg-[#13151a] p-2.5 border border-[#e3dfd5]/5 shadow-[inset_0_2px_10px_rgba(10,11,13,0.5)]">
+                    <div class="bg-[#13151a] p-2 sm:p-2.5 border border-[#e3dfd5]/5 shadow-[inset_0_2px_10px_rgba(10,11,13,0.5)] text-center lg:text-left">
                       <span class="block text-[7px] text-[#e3dfd5]/40 font-mono mb-1 uppercase tracking-widest">DATA_SPECS</span>
-                      <span class="text-[9px] text-[#e3dfd5]/80 font-mono">{servicio.specs.split(' | ')[0]}</span>
+                      <span class="text-[8px] sm:text-[9px] text-[#e3dfd5]/80 font-mono">{servicio.specs.split(' | ')[0]}</span>
                     </div>
                   </div>
 
-                  <div class="flex-grow border-t border-[#e3dfd5]/10 pt-4 relative">
-                    <div class="absolute left-0 top-4 w-[2px] h-[50%] bg-gradient-to-b to-transparent" style={`from: ${servicio.color}`}></div>
-                    <p class="text-xs md:text-sm text-[#e3dfd5]/80 font-sans leading-relaxed text-left pl-3 opacity-90">
+                  <div class="flex-grow border-t border-[#e3dfd5]/10 pt-3 relative">
+                    <div class="hidden lg:block absolute left-0 top-4 w-[2px] h-[50%] bg-gradient-to-b to-transparent" style={`from: ${servicio.color}`}></div>
+                    <p class="text-xs lg:text-sm text-[#e3dfd5]/80 font-sans leading-relaxed text-center lg:text-left lg:pl-3 opacity-90">
                       {servicio.review}
                     </p>
                   </div>
 
-                  <div class="mt-auto pt-4 flex justify-between items-end border-t border-[#e3dfd5]/5">
+                  <div class="mt-4 pt-3 flex justify-between items-end border-t border-[#e3dfd5]/5">
                     <div class="w-[60%] h-3 bg-[repeating-linear-gradient(90deg,#e3dfd5,#e3dfd5_1.5px,transparent_1.5px,transparent_3px)] opacity-20"></div>
                     <span class="text-[7px] font-mono text-[#e3dfd5]/30 uppercase tracking-widest">END_OF_RECORD</span>
                   </div>

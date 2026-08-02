@@ -4,10 +4,8 @@
 ---
 
 <footer class="terminal-footer">
-
   <!-- Contenedor Principal en Cuadrícula -->
   <div class="footer-core-grid">
-    
     <!-- Módulo 01: Marca Gigante con Estilo .EXE -->
     <div class="brand-panel">
       <div class="panel-badge">CORE_FILE: LRM.DAT</div>
@@ -15,7 +13,8 @@
         LOREM<span class="outlined-text">.IPSUM</span>
       </h2>
       <p class="brand-paragraph">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam elementum sodales mauris, ut finibus elit pretium ac. 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+        elementum sodales mauris, ut finibus elit pretium ac.
       </p>
       <div class="tech-specs">
         <span class="spec-item">V.1_BUILD_2026</span>
@@ -59,12 +58,21 @@
           </div>
         </div>
         <div class="cartridge-body">
-          <p class="cartridge-text">LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISCING ELIT.</p>
-          
+          <p class="cartridge-text">
+            LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISCING ELIT.
+          </p>
+
           <div class="fake-form-group">
             <div class="fake-input-field">LOREM_EMAIL@IPSUM.COM</div>
             <button class="brutal-submit-btn" aria-label="Action Button">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+              >
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
@@ -73,7 +81,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- Barra Flotante Inferior (Estilo Dock) -->
@@ -102,10 +109,10 @@
     --color-teal: #4ade80;
     --color-beige: #e3dfd5;
     --color-muted: #6e7582;
-    
+
     background-color: var(--color-dark);
     color: var(--color-beige);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     text-transform: uppercase;
     padding: 0 0 2rem 0;
     position: relative;
@@ -142,13 +149,28 @@
     margin-bottom: 0.5rem;
   }
 
+  /* --- REJILLA CENTRAL CARGADA --- */
+  .footer-core-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 2.5rem;
+    padding: 4rem 2rem;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   .giant-brand-title {
-    font-family: 'Arial Black', Impact, sans-serif;
-    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-family: "Arial Black", Impact, sans-serif;
+    font-size: clamp(
+      2.5rem,
+      8vw,
+      5.5rem
+    ); /* Ajustado para que no desborde en teléfonos pequeños */
     line-height: 0.85;
     margin: 0 0 1.5rem 0;
-    letter-spacing: -3px;
+    letter-spacing: -2px;
     color: var(--color-beige);
+    word-break: break-word;
   }
 
   .outlined-text {
@@ -208,7 +230,9 @@
     text-decoration: none;
     font-weight: bold;
     font-size: 0.95rem;
-    transition: transform 0.1s steps(2), border-color 0.2s;
+    transition:
+      transform 0.1s steps(2),
+      border-color 0.2s;
   }
 
   .anchor-link .prefix {
@@ -227,6 +251,7 @@
     border: 2px solid var(--color-beige);
     box-shadow: 6px 6px 0px var(--color-orange);
     position: relative;
+    max-width: 100%;
   }
 
   .cartridge-top {
@@ -334,9 +359,24 @@
     width: 14px;
     height: 14px;
   }
-  .decor-box.solid { background-color: var(--color-beige); }
-  .decor-box.orange { background-color: var(--color-orange); }
-  .decor-box.border { border: 2px solid var(--color-muted); }
+  .decor-box.solid {
+    background-color: var(--color-beige);
+  }
+  .decor-box.orange {
+    background-color: var(--color-orange);
+  }
+  .decor-box.border {
+    border: 2px solid var(--color-muted);
+  }
+
+  /* --- MEDIA QUERIES RESPONSIVE --- */
+  @media (max-width: 1024px) {
+    .footer-core-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 2.5rem 1.5rem;
+    }
+  }
 
   @media (max-width: 600px) {
     .footer-dock-bottom {
