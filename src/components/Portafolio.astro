@@ -79,10 +79,11 @@ const proyectos = [
       </p>
     </div>
 
+    <!-- GRID DE CARTUCHOS -->
     <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-16 gap-x-8 place-items-center relative z-10">
       
       {proyectos.map((proyecto, index) => (
-        <article class="relative w-full max-w-[340px] aspect-[4/3] group cursor-pointer perspective-1000 z-10 js-project-card overflow-visible">
+        <article class="relative w-full max-w-[340px] aspect-[4/3] group cursor-pointer perspective-1000 z-10 js-project-card overflow-visible" data-index={index}>
           
           <div class="card-closed absolute inset-0 transition-opacity duration-300">
             <div class="absolute top-[4%] bottom-[4%] right-[2%] aspect-square rounded-full shadow-[15px_15px_25px_rgba(10,11,13,0.9)] transition-all duration-[700ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-[45%] group-hover:rotate-[180deg] group-hover:scale-[1.02] flex items-center justify-center border-[2px] border-[#0a0b0d]/90 z-0 bg-[#13151a]"
@@ -157,101 +158,114 @@ const proyectos = [
               </div>
             </div>
           </div>
-
-          <div class="card-opened absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280%] h-[180%] scale-0 opacity-0 pointer-events-none z-50 flex gap-12 items-center">
-            
-            <div class="detailed-disc w-[50%] aspect-square rounded-full flex items-center justify-center border-[4px] border-[#0a0b0d]/90 bg-[#13151a] shadow-[20px_20px_50px_rgba(10,11,13,0.8)] relative"
-                 style={`-webkit-mask-image: radial-gradient(circle, transparent 13%, black 13.5%); mask-image: radial-gradient(circle, transparent 13%, black 13.5%); box-shadow: 0 0 0 4px ${proyecto.color}60 inset;`}>
-              
-              <img src={proyecto.img} alt={proyecto.cliente} class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity contrast-[1.3]" />
-              <div class="absolute inset-0 mix-blend-color opacity-50" style={`background-color: ${proyecto.color};`}></div>
-              
-              <div class="absolute inset-0 border-[12px] border-[#0a0b0d]/50 rounded-full m-3 pointer-events-none"></div>
-              <div class="absolute inset-0 border border-[#e3dfd5]/20 rounded-full m-1 pointer-events-none"></div>
-              <div class="absolute inset-[25%] border-[2px] border-[#e3dfd5]/10 rounded-full pointer-events-none"></div>
-              <div class="absolute inset-[35%] border-[1px] border-[#e3dfd5]/20 rounded-full pointer-events-none border-dashed"></div>
-
-              <div class="absolute inset-[15%] rounded-full border border-[#e3dfd5]/5 opacity-40">
-                <div class="w-full h-full transform rotate-[45deg] bg-[linear-gradient(45deg,transparent_45%,rgba(227,223,213,0.05)_50%,transparent_55%)]"></div>
-              </div>
-
-              <div class="absolute top-[20%] w-full text-center text-[10px] font-mono font-black tracking-[0.2em] text-[#e3dfd5]/90 drop-shadow-md">
-                {proyecto.codigoCorto} // {proyecto.id}
-              </div>
-              <div class="absolute bottom-[20%] bg-[#0a0b0d]/80 px-2 py-0.5 text-[8px] font-mono text-[#e3dfd5]" style={`border-bottom: 2px solid ${proyecto.color}`}>
-                SYSTEM_READER: GEN-KT-00{index+1}
-              </div>
-            </div>
-
-            <div class="w-[50%] flex-grow bg-[#0a0b0d] border-[1px] p-6 relative shadow-[20px_20px_50px_rgba(10,11,13,0.9)] flex flex-col" style={`border-color: ${proyecto.color}60`}>
-              
-              <div class="absolute top-0 left-0 w-full h-1" style={`background-color: ${proyecto.color}; opacity: 0.8`}></div>
-              <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(10,11,13,0.8)_50%)] bg-[size:100%_4px] pointer-events-none z-0 opacity-40"></div>
-              
-              <div class="relative z-10 flex-grow">
-                <div class="flex justify-between items-center text-[10px] font-mono text-[#e3dfd5]/50 mb-4 border-b border-[#e3dfd5]/10 pb-2">
-                  <span>RECORD: {proyecto.id}</span>
-                  <div class="flex items-center gap-2">
-                    <span class={proyecto.tipoArchivo === 'NONE' ? "text-[#ff2a2a] animate-none" : "animate-pulse"} style={proyecto.tipoArchivo !== 'NONE' ? `color: ${proyecto.color}` : ''}>
-                      {proyecto.tipoArchivo === 'NONE' ? 'SYSTEM_LOCKED' : 'SYSTEM_ACTIVE'}
-                    </span>
-                    <div class="w-2 h-2 rounded-full" style={`background-color: ${proyecto.tipoArchivo === 'NONE' ? '#ff2a2a' : proyecto.color}`}></div>
-                  </div>
-                </div>
-
-                <h3 class="text-3xl md:text-5xl font-black text-[#e3dfd5] tracking-tighter uppercase leading-[0.9] mb-3" style={`text-shadow: 3px 3px 0px ${proyecto.color}60`}>
-                  {proyecto.cliente}
-                </h3>
-                
-                <div class="inline-block bg-[#e3dfd5]/10 text-[#e3dfd5] border border-[#e3dfd5]/20 px-2 py-0.5 text-[10px] font-mono font-bold tracking-widest mb-6 uppercase">
-                  {proyecto.categoria}
-                </div>
-
-                <div class="text-[9px] md:text-[10px] font-mono text-[#e3dfd5]/70 mb-4 bg-[#13151a]/60 p-2 border-l-2" style={`border-color: ${proyecto.tipoArchivo === 'NONE' ? '#ff2a2a' : proyecto.color}`}>
-                  <span class="text-[#e3dfd5] block mb-1 font-bold">TECH_SPECS //</span>
-                  {proyecto.specs}
-                </div>
-
-                <p class="text-sm md:text-base text-[#e3dfd5]/80 font-sans leading-relaxed border-t border-[#e3dfd5]/10 pt-4">
-                  {proyecto.review}
-                </p>
-              </div>
-
-              <!-- LÓGICA CONDICIONAL DE BOTONES: VISOR DE PDF INCORPORADO -->
-              <div class="relative z-10 mt-6 flex flex-col gap-2">
-                
-                {proyecto.tipoArchivo === 'PDF' && (
-                  <button data-pdf={proyecto.archivoUrl} class="js-view-pdf-btn w-full py-3 bg-[#4ade80] hover:bg-[#ff8c33] text-[#0a0b0d] font-black text-[11px] uppercase tracking-widest transition-transform hover:-translate-y-1 shadow-[4px_4px_0px_#e3dfd5] flex items-center justify-center gap-2 pointer-events-auto">
-                    <span class="text-[#e3dfd5] font-mono bg-[#0a0b0d] px-1 py-0.5 text-[8px]">[.PDF]</span> VISUALIZAR_DATOS
-                  </button>
-                )}
-
-                {proyecto.tipoArchivo === 'WEB' && (
-                  <a href={proyecto.archivoUrl} target="_blank" rel="noopener noreferrer" class="w-full py-3 bg-[#4ade80] hover:bg-[#5cf090] text-[#0a0b0d] font-black text-[11px] uppercase tracking-widest transition-transform hover:-translate-y-1 shadow-[4px_4px_0px_#e3dfd5] flex items-center justify-center gap-2 pointer-events-auto">
-                    <span class="text-[#e3dfd5] font-mono bg-[#0a0b0d] px-1 py-0.5 text-[8px]">[WWW]</span> CONECTAR_ENLACE
-                  </a>
-                )}
-
-                {proyecto.tipoArchivo === 'NONE' && (
-                  <div class="w-full py-3 bg-[#13151a] border-2 border-dashed border-[#ff2a2a]/50 text-[#ff2a2a] font-mono text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 cursor-not-allowed opacity-80 pointer-events-auto">
-                    <span>[!]</span> ARCHIVO_CLASIFICADO
-                  </div>
-                )}
-
-                <button class="js-close-btn w-full py-2 mt-1 bg-transparent hover:bg-[#e3dfd5]/5 border border-[#e3dfd5]/20 text-[#e3dfd5] font-mono text-[10px] uppercase tracking-widest transition-colors flex items-center justify-center gap-2 cursor-pointer pointer-events-auto">
-                  <span class="text-[#ff2a2a] font-black">X</span> CERRAR_ARCHIVO
-                </button>
-              </div>
-            </div>
-          </div>
         </article>
       ))}
 
     </div>
   </div>
 
+  <!-- MODAL INDEPENDIENTE Y SOBRE TODO EL DOM (Z-INDEX SUPERIOR) -->
+  <!-- MODAL INDEPENDIENTE Y SOBRE TODO EL DOM (Z-INDEX SUPERIOR) -->
+  <div id="project-modal" class="fixed inset-0 z-[9900] hidden items-center justify-center p-2 sm:p-4">
+    <!-- Backdrop Borroso -->
+    <div id="project-modal-backdrop" class="absolute inset-0 bg-[#0a0b0d]/80 backdrop-blur-md opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Contenido del Modal Centrado (Subido en móvil con top-[45%] y md:top-1/2) -->
+    {proyectos.map((proyecto, index) => (
+      <div class="js-modal-content hidden absolute top-[45%] md:top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92vw] sm:w-[95vw] max-w-[900px] max-h-[85vh] md:max-h-[90vh] z-10 flex-col md:flex-row gap-4 md:gap-8 items-center justify-start md:justify-center p-3 md:p-2 overflow-y-auto custom-scrollbar" data-modal-index={index}>
+        
+        <!-- Disco reducido en móviles (160px) para ahorrar espacio vertical -->
+        <div class="detailed-disc w-[160px] sm:w-[220px] md:w-[45%] aspect-square rounded-full flex-shrink-0 flex items-center justify-center border-[3px] md:border-[4px] border-[#0a0b0d]/90 bg-[#13151a] shadow-[0_0_40px_rgba(0,0,0,0.8)] relative my-2 md:my-0"
+             style={`-webkit-mask-image: radial-gradient(circle, transparent 13%, black 13.5%); mask-image: radial-gradient(circle, transparent 13%, black 13.5%); box-shadow: 0 0 0 4px ${proyecto.color}60 inset;`}>
+          
+          <img src={proyecto.img} alt={proyecto.cliente} class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-luminosity contrast-[1.3]" />
+          <div class="absolute inset-0 mix-blend-color opacity-50" style={`background-color: ${proyecto.color};`}></div>
+          
+          <div class="absolute inset-0 border-[8px] md:border-[12px] border-[#0a0b0d]/50 rounded-full m-2 md:m-3 pointer-events-none"></div>
+          <div class="absolute inset-0 border border-[#e3dfd5]/20 rounded-full m-1 pointer-events-none"></div>
+          <div class="absolute inset-[25%] border-[2px] border-[#e3dfd5]/10 rounded-full pointer-events-none"></div>
+          <div class="absolute inset-[35%] border-[1px] border-[#e3dfd5]/20 rounded-full pointer-events-none border-dashed"></div>
+
+          <div class="absolute inset-[15%] rounded-full border border-[#e3dfd5]/5 opacity-40">
+            <div class="w-full h-full transform rotate-[45deg] bg-[linear-gradient(45deg,transparent_45%,rgba(227,223,213,0.05)_50%,transparent_55%)]"></div>
+          </div>
+
+          <div class="absolute top-[18%] md:top-[20%] w-full text-center text-[8px] md:text-[10px] font-mono font-black tracking-[0.2em] text-[#e3dfd5]/90 drop-shadow-md">
+            {proyecto.codigoCorto} // {proyecto.id}
+          </div>
+          <div class="absolute bottom-[18%] md:bottom-[20%] bg-[#0a0b0d]/80 px-2 py-0.5 text-[7px] md:text-[8px] font-mono text-[#e3dfd5]" style={`border-bottom: 2px solid ${proyecto.color}`}>
+            SYSTEM_READER: GEN-KT-00{index+1}
+          </div>
+        </div>
+
+        <!-- Tarjeta de Contenido con padding inferior seguro en móvil -->
+        <div class="w-full md:w-[55%] flex-grow bg-[#0a0b0d] border-[1px] p-4 md:p-6 relative shadow-[20px_20px_50px_rgba(10,11,13,0.9)] flex flex-col justify-between mb-4 md:mb-0" style={`border-color: ${proyecto.color}60`}>
+          
+          <div class="absolute top-0 left-0 w-full h-1" style={`background-color: ${proyecto.color}; opacity: 0.8`}></div>
+          <div class="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(10,11,13,0.8)_50%)] bg-[size:100%_4px] pointer-events-none z-0 opacity-40"></div>
+          
+          <div class="relative z-10 flex-grow">
+            <div class="flex justify-between items-center text-[9px] md:text-[10px] font-mono text-[#e3dfd5]/50 mb-3 md:mb-4 border-b border-[#e3dfd5]/10 pb-2">
+              <span>RECORD: {proyecto.id}</span>
+              <div class="flex items-center gap-2">
+                <span class={proyecto.tipoArchivo === 'NONE' ? "text-[#ff2a2a] animate-none" : "animate-pulse"} style={proyecto.tipoArchivo !== 'NONE' ? `color: ${proyecto.color}` : ''}>
+                  {proyecto.tipoArchivo === 'NONE' ? 'SYSTEM_LOCKED' : 'SYSTEM_ACTIVE'}
+                </span>
+                <div class="w-2 h-2 rounded-full" style={`background-color: ${proyecto.tipoArchivo === 'NONE' ? '#ff2a2a' : proyecto.color}`}></div>
+              </div>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl md:text-5xl font-black text-[#e3dfd5] tracking-tighter uppercase leading-[0.9] mb-2 md:mb-3" style={`text-shadow: 2px 2px 0px ${proyecto.color}60`}>
+              {proyecto.cliente}
+            </h3>
+            
+            <div class="inline-block bg-[#e3dfd5]/10 text-[#e3dfd5] border border-[#e3dfd5]/20 px-2 py-0.5 text-[9px] md:text-[10px] font-mono font-bold tracking-widest mb-3 md:mb-6 uppercase">
+              {proyecto.categoria}
+            </div>
+
+            <div class="text-[8px] sm:text-[9px] md:text-[10px] font-mono text-[#e3dfd5]/70 mb-3 md:mb-4 bg-[#13151a]/60 p-2 border-l-2" style={`border-color: ${proyecto.tipoArchivo === 'NONE' ? '#ff2a2a' : proyecto.color}`}>
+              <span class="text-[#e3dfd5] block mb-1 font-bold">TECH_SPECS //</span>
+              {proyecto.specs}
+            </div>
+
+            <p class="text-xs sm:text-sm md:text-base text-[#e3dfd5]/80 font-sans leading-relaxed border-t border-[#e3dfd5]/10 pt-3 md:pt-4">
+              {proyecto.review}
+            </p>
+          </div>
+
+          <!-- BOTONES DE ACCIÓN -->
+          <div class="relative z-10 mt-4 md:mt-6 flex flex-col gap-2 pb-2 md:pb-0">
+            
+            {proyecto.tipoArchivo === 'PDF' && (
+              <button data-pdf={proyecto.archivoUrl} class="js-view-pdf-btn w-full py-2.5 md:py-3 bg-[#4ade80] hover:bg-[#ff8c33] text-[#0a0b0d] font-black text-[10px] md:text-[11px] uppercase tracking-widest transition-transform hover:-translate-y-1 shadow-[3px_3px_0px_#e3dfd5] md:shadow-[4px_4px_0px_#e3dfd5] flex items-center justify-center gap-2 pointer-events-auto">
+                <span class="text-[#e3dfd5] font-mono bg-[#0a0b0d] px-1 py-0.5 text-[7px] md:text-[8px]">[.PDF]</span> VISUALIZAR_DATOS
+              </button>
+            )}
+
+            {proyecto.tipoArchivo === 'WEB' && (
+              <a href={proyecto.archivoUrl} target="_blank" rel="noopener noreferrer" class="w-full py-2.5 md:py-3 bg-[#4ade80] hover:bg-[#5cf090] text-[#0a0b0d] font-black text-[10px] md:text-[11px] uppercase tracking-widest transition-transform hover:-translate-y-1 shadow-[3px_3px_0px_#e3dfd5] md:shadow-[4px_4px_0px_#e3dfd5] flex items-center justify-center gap-2 pointer-events-auto">
+                <span class="text-[#e3dfd5] font-mono bg-[#0a0b0d] px-1 py-0.5 text-[7px] md:text-[8px]">[WWW]</span> CONECTAR_ENLACE
+              </a>
+            )}
+
+            {proyecto.tipoArchivo === 'NONE' && (
+              <div class="w-full py-2.5 md:py-3 bg-[#13151a] border-2 border-dashed border-[#ff2a2a]/50 text-[#ff2a2a] font-mono text-[9px] md:text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 cursor-not-allowed opacity-80 pointer-events-auto">
+                <span>[!]</span> ARCHIVO_CLASIFICADO
+              </div>
+            )}
+
+            <button class="js-close-modal-btn w-full py-2 mt-0.5 bg-transparent hover:bg-[#e3dfd5]/5 border border-[#e3dfd5]/20 text-[#e3dfd5] font-mono text-[9px] md:text-[10px] uppercase tracking-widest transition-colors flex items-center justify-center gap-2 cursor-pointer pointer-events-auto">
+              <span class="text-[#ff2a2a] font-black">X</span> CERRAR_ARCHIVO
+            </button>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
 </section>
 
+<!-- VISOR PDF -->
 <div id="pdf-viewer-modal" class="fixed inset-0 z-[9999] bg-[#0a0b0d]/95 backdrop-blur-md hidden flex-col items-center justify-center p-2 md:p-6 opacity-0 transition-opacity duration-300">
   
   <div class="w-full max-w-[95vw] lg:max-w-[1400px] bg-[#4ade80] flex justify-between items-center px-4 py-3 border-x-4 border-t-4 border-[#0a0b0d]">
@@ -266,7 +280,7 @@ const proyectos = [
   </div>
   
   <div class="w-full max-w-[95vw] lg:max-w-[1400px] h-[90vh] bg-[#13151a] border-x-4 border-b-4 border-[#0a0b0d] relative shadow-[0_0_50px_rgba(255,115,0,0.2)] flex flex-col items-center overflow-auto custom-scrollbar" id="pdf-container">
-     
+      
      <div id="pdf-loader" class="absolute inset-0 flex flex-col items-center justify-center text-[#4ade80] bg-[#13151a] z-50 hidden">
         <div class="w-12 h-12 border-4 border-dashed border-[#4ade80]/30 border-t-[#4ade80] rounded-full animate-spin"></div>
         <span class="mt-4 font-mono font-bold text-xs tracking-widest animate-pulse">DECODIFICANDO DATOS...</span>
@@ -284,11 +298,6 @@ const proyectos = [
   
   .clip-cartridge {
     clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
-  }
-  
-  .card-opened {
-    visibility: hidden;
-    pointer-events: none;
   }
   
   #pdf-viewer-modal {
@@ -318,12 +327,16 @@ const proyectos = [
   gsap.registerPlugin(ScrollTrigger);
 
   function initPortfolio() {
-    const section = document.getElementById('portfolio');
-
+    const modalWrapper = document.getElementById('project-modal');
+    const backdrop = document.getElementById('project-modal-backdrop');
     const cards = document.querySelectorAll('.js-project-card');
-    let activeCard: HTMLElement | null = null;
+    const modalContents = document.querySelectorAll('.js-modal-content');
+    const closeBtns = document.querySelectorAll('.js-close-modal-btn');
+    
+    let activeModalContent: HTMLElement | null = null;
     let isAnimating = false;
 
+    // Entrada animada inicial del grid
     gsap.from('.js-project-card', {
       scrollTrigger: {
         trigger: '#portfolio',
@@ -337,124 +350,84 @@ const proyectos = [
       ease: 'power3.out'
     });
 
-    cards.forEach((cardEl) => {
-      const card = cardEl as HTMLElement;
-      const closedState = card.querySelector('.card-closed') as HTMLElement;
-      const openedState = card.querySelector('.card-opened') as HTMLElement;
-      const detailedDisc = card.querySelector('.detailed-disc') as HTMLElement;
-      const closeBtn = card.querySelector('.js-close-btn') as HTMLElement;
-
-      const toggleCard = (e?: Event) => {
-        if (e) e.stopPropagation();
+    // Abrir Modal
+    cards.forEach((card) => {
+      card.addEventListener('click', () => {
         if (isAnimating) return;
-        
-        const isOpening = activeCard !== card;
+        const index = card.getAttribute('data-index');
+        const targetContent = document.querySelector(`.js-modal-content[data-modal-index="${index}"]`) as HTMLElement;
 
-        if (isOpening) {
+        if (targetContent && modalWrapper && backdrop) {
           isAnimating = true;
-          activeCard = card;
-
-          if (section) section.style.zIndex = '999';
-
-          cards.forEach(c => {
-            if (c !== card) {
-              gsap.to(c, { opacity: 0, scale: 0.9, pointerEvents: 'none', duration: 0.4 });
-            }
-          });
+          activeModalContent = targetContent;
 
           const lenis = (window as any).lenis;
-          if (lenis) {
-            const cardRect = card.getBoundingClientRect();
-            const offset = -(window.innerHeight / 2) + (cardRect.height / 2);
-            
-            lenis.scrollTo(card, { 
-              offset: offset, 
-              duration: 0.6
-            });
+          if (lenis) lenis.stop();
+
+          // Mostrar contenedor global
+          modalWrapper.classList.remove('hidden');
+          modalWrapper.classList.add('flex');
+          targetContent.classList.remove('hidden');
+          targetContent.classList.add('flex');
+
+          const detailedDisc = targetContent.querySelector('.detailed-disc') as HTMLElement;
+
+          // Animar backdrop
+          gsap.to(backdrop, { opacity: 1, duration: 0.3 });
+
+          // Animar Modal y Disco
+          gsap.fromTo(targetContent, 
+            { opacity: 0, scale: 0.8 }, 
+            { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.2)" }
+          );
+
+          if (detailedDisc) {
+            gsap.fromTo(detailedDisc, 
+              { rotation: -180 }, 
+              {
+                rotation: 0,
+                duration: 0.9,
+                ease: "power3.out",
+                onComplete: () => { isAnimating = false; }
+              }
+            );
           } else {
-             card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            isAnimating = false;
           }
-
-          setTimeout(() => {
-            if (lenis) lenis.stop();
-
-            const rect = card.getBoundingClientRect();
-            const targetX = (window.innerWidth / 2) - (rect.left + rect.width / 2);
-            const targetY = (window.innerHeight / 2) - (rect.top + rect.height / 2);
-
-            gsap.set(card, { zIndex: 50 });
-
-            gsap.to(closedState, { opacity: 0, scale: 0.8, duration: 0.4, ease: "power2.in" });
-            gsap.set(openedState, { visibility: 'visible', pointerEvents: 'auto' });
-            
-            gsap.to(card, { x: targetX, y: targetY, duration: 0.8, ease: "power4.out" });
-            gsap.to(openedState, { opacity: 1, scale: 1, duration: 0.8, ease: "power4.out", delay: 0.1 });
-
-            gsap.fromTo(detailedDisc, { rotation: -180 }, {
-              rotation: 0,
-              duration: 1.2,
-              ease: "back.out(1.4)",
-              delay: 0.3,
-              onComplete: () => { isAnimating = false; }
-            });
-          }, 650);
-
-        } else {
-          isAnimating = true;
-          activeCard = null;
-
-          gsap.to(openedState, {
-            opacity: 0, scale: 0.8, duration: 0.5, ease: "power3.in",
-            onComplete: () => { gsap.set(openedState, { visibility: 'hidden', pointerEvents: 'none' }); }
-          });
-
-          gsap.to(card, {
-            x: 0, y: 0, duration: 0.8, ease: "power3.inOut",
-            onComplete: () => { 
-              gsap.set(card, { zIndex: 10 }); 
-              
-              // DEVOLVEMOS TODO A LA NORMALIDAD
-              if (section) section.style.zIndex = '10';
-              const lenis = (window as any).lenis;
-              if (lenis) lenis.start();
-
-              isAnimating = false; 
-            }
-          });
-
-          gsap.to(closedState, { opacity: 1, scale: 1, duration: 0.6, delay: 0.2, ease: "power2.out" });
-
-          cards.forEach(c => {
-            if (c !== card) {
-              gsap.to(c, { opacity: 1, scale: 1, pointerEvents: 'auto', duration: 0.5, delay: 0.3 });
-            }
-          });
         }
-      };
-
-      card.addEventListener('click', () => {
-        if (!activeCard) toggleCard();
       });
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', (e) => {
-          if (activeCard === card) toggleCard(e);
-        });
-      }
     });
 
-    document.addEventListener('click', (e) => {
-      const modal = document.getElementById('pdf-viewer-modal');
-      if (modal && !modal.classList.contains('hidden')) return;
+    // Función para cerrar Modal
+    const closeModal = () => {
+      if (isAnimating || !activeModalContent || !modalWrapper || !backdrop) return;
+      isAnimating = true;
 
-      if (activeCard && !isAnimating) {
-        const target = e.target as HTMLElement;
-        if (!activeCard.contains(target)) {
-          const closeBtn = activeCard.querySelector('.js-close-btn') as HTMLElement;
-          if (closeBtn) closeBtn.click();
+      gsap.to(backdrop, { opacity: 0, duration: 0.3 });
+      gsap.to(activeModalContent, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: () => {
+          if (activeModalContent) {
+            activeModalContent.classList.add('hidden');
+            activeModalContent.classList.remove('flex');
+          }
+          modalWrapper.classList.add('hidden');
+          modalWrapper.classList.remove('flex');
+
+          const lenis = (window as any).lenis;
+          if (lenis) lenis.start();
+
+          activeModalContent = null;
+          isAnimating = false;
         }
-      }
-    });
+      });
+    };
+
+    closeBtns.forEach((btn) => btn.addEventListener('click', closeModal));
+    if (backdrop) backdrop.addEventListener('click', closeModal);
 
     // === PDF.JS BEHANCE STYLE ===
     const pdfjsLib = (window as any)['pdfjs-dist/build/pdf'];
@@ -463,8 +436,8 @@ const proyectos = [
     }
 
     const pdfButtons = document.querySelectorAll('.js-view-pdf-btn');
-    const modal = document.getElementById('pdf-viewer-modal');
-    const closeModalBtn = document.getElementById('close-pdf-modal');
+    const modalPdf = document.getElementById('pdf-viewer-modal');
+    const closeModalPdfBtn = document.getElementById('close-pdf-modal');
     const pdfContainer = document.getElementById('pdf-container');
     const pagesWrapper = document.getElementById('pdf-pages-wrapper');
     const loader = document.getElementById('pdf-loader');
@@ -502,15 +475,15 @@ const proyectos = [
         e.stopPropagation();
         const pdfUrl = (btn as HTMLElement).getAttribute('data-pdf');
         
-        if (pdfUrl && modal && pdfjsLib && loader && pagesWrapper) {
-          modal.classList.remove('hidden');
-          modal.classList.add('flex');
+        if (pdfUrl && modalPdf && pdfjsLib && loader && pagesWrapper) {
+          modalPdf.classList.remove('hidden');
+          modalPdf.classList.add('flex');
           loader.classList.remove('hidden'); 
           pagesWrapper.innerHTML = ''; 
           
           setTimeout(() => {
-            modal.classList.remove('opacity-0');
-            modal.classList.add('opacity-100');
+            modalPdf.classList.remove('opacity-0');
+            modalPdf.classList.add('opacity-100');
           }, 10);
 
           loader.innerHTML = `
@@ -530,21 +503,17 @@ const proyectos = [
       });
     });
 
-    if (closeModalBtn && modal) {
-      closeModalBtn.addEventListener('click', () => {
-        modal.classList.remove('opacity-100');
-        modal.classList.add('opacity-0');
+    if (closeModalPdfBtn && modalPdf) {
+      closeModalPdfBtn.addEventListener('click', () => {
+        modalPdf.classList.remove('opacity-100');
+        modalPdf.classList.add('opacity-0');
         setTimeout(() => {
-          modal.classList.add('hidden');
-          modal.classList.remove('flex');
+          modalPdf.classList.add('hidden');
+          modalPdf.classList.remove('flex');
           if(pagesWrapper) pagesWrapper.innerHTML = ''; 
           currentPdfDoc = null;
         }, 300);
       });
-    }
-    
-    if (modal) {
-      modal.addEventListener('contextmenu', (e) => e.preventDefault());
     }
   }
 
