@@ -83,7 +83,13 @@ const proyectos = [
     <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-16 gap-x-8 place-items-center relative z-10">
       
       {proyectos.map((proyecto, index) => (
-        <article class="relative w-full max-w-[340px] aspect-[4/3] group cursor-pointer perspective-1000 z-10 js-project-card overflow-visible" data-index={index}>
+        <article
+          class="relative w-full max-w-[340px] aspect-[4/3] group cursor-pointer perspective-1000 z-10 js-project-card overflow-visible focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#ff7300]"
+          data-index={index}
+          tabindex="0"
+          role="button"
+          aria-label={`View Project: ${proyecto.cliente}`}
+        >
           
           <div class="card-closed absolute inset-0 transition-opacity duration-300">
             <div class="absolute top-[4%] bottom-[4%] right-[2%] aspect-square rounded-full shadow-[15px_15px_25px_rgba(10,11,13,0.9)] transition-all duration-[700ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-[45%] group-hover:rotate-[180deg] group-hover:scale-[1.02] flex items-center justify-center border-[2px] border-[#0a0b0d]/90 z-0 bg-[#13151a]"
@@ -351,8 +357,7 @@ const proyectos = [
     });
 
     // Abrir Modal
-    cards.forEach((card) => {
-      card.addEventListener('click', () => {
+    const openModal = (card: Element) => {
         if (isAnimating) return;
         const index = card.getAttribute('data-index');
         const targetContent = document.querySelector(`.js-modal-content[data-modal-index="${index}"]`) as HTMLElement;
@@ -394,6 +399,16 @@ const proyectos = [
           } else {
             isAnimating = false;
           }
+        }
+    };
+
+    cards.forEach((card) => {
+      card.addEventListener('click', () => openModal(card));
+      card.addEventListener('keydown', (e) => {
+        const keyboardEvent = e as KeyboardEvent;
+        if (keyboardEvent.key === 'Enter' || keyboardEvent.key === ' ') {
+          keyboardEvent.preventDefault();
+          openModal(card);
         }
       });
     });

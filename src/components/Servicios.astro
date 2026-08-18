@@ -67,7 +67,10 @@ const servicios = [
       <div class="flex gap-16 sm:gap-24 md:gap-32 pr-16 sm:pr-24 md:pr-32 shrink-0 px-4 md:px-8 xl:px-[calc((100vw-1500px)/2)]">
         {servicios.map((servicio, index) => (
           <article 
-            class="cassette-scene group cursor-pointer shrink-0 transition-z duration-300 relative w-[150px] sm:w-[180px] md:w-[220px]"
+            class="cassette-scene group cursor-pointer shrink-0 transition-z duration-300 relative w-[150px] sm:w-[180px] md:w-[220px] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#ff7300] rounded-xl"
+            tabindex="0"
+            role="button"
+            aria-label={`View Service Details: ${servicio.titulo}`}
             data-id={servicio.id}
             data-titulo={servicio.titulo}
             data-tag={servicio.tag}
@@ -211,7 +214,10 @@ const servicios = [
       <div class="flex gap-16 sm:gap-24 md:gap-32 pr-16 sm:pr-24 md:pr-32 shrink-0 px-4 md:px-8 xl:px-[calc((100vw-1500px)/2)]" aria-hidden="true">
         {servicios.map((servicio, index) => (
           <article 
-            class="cassette-scene group cursor-pointer shrink-0 transition-z duration-300 relative w-[150px] sm:w-[180px] md:w-[220px]"
+            class="cassette-scene group cursor-pointer shrink-0 transition-z duration-300 relative w-[150px] sm:w-[180px] md:w-[220px] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#ff7300] rounded-xl"
+            tabindex="-1"
+            role="presentation"
+            aria-hidden="true"
             data-id={servicio.id}
             data-titulo={servicio.titulo}
             data-tag={servicio.tag}
@@ -534,10 +540,7 @@ const servicios = [
       });
     }
 
-    cassettes.forEach((cassette) => {
-      cassette.addEventListener('click', (e) => {
-        e.stopPropagation(); 
-        
+    const toggleCassette = (cassette: Element) => {
         const isActive = cassette.classList.contains('is-active');
         if (track.classList.contains('is-locked') && !isActive) return;
 
@@ -613,6 +616,20 @@ const servicios = [
               }
             }
           });
+        }
+    };
+
+    cassettes.forEach((cassette) => {
+      cassette.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleCassette(cassette);
+      });
+      cassette.addEventListener('keydown', (e) => {
+        const keyboardEvent = e as KeyboardEvent;
+        if (keyboardEvent.key === 'Enter' || keyboardEvent.key === ' ') {
+          keyboardEvent.preventDefault();
+          keyboardEvent.stopPropagation();
+          toggleCassette(cassette);
         }
       });
     });
