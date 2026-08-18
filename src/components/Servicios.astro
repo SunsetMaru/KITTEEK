@@ -88,7 +88,8 @@ const servicios = [
                   <div class="absolute bottom-1.5 right-1.5 w-2 h-2 rounded-full bg-[#0a0b0d] flex items-center justify-center border border-[#e3dfd5]/10 z-20"><div class="w-full h-[1px] bg-[#e3dfd5]/30 transform rotate-[120deg]"></div></div>
 
                   <div class="absolute top-[12%] bottom-[22%] left-[12%] right-[12%] bg-[#e3dfd5] rounded-sm z-10 flex flex-col p-1.5 sm:p-2 md:p-3 border border-[#e3dfd5]/50 shadow-inner overflow-hidden">
-                    <img src={servicio.img} alt="Character" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale-[40%] pointer-events-none z-0" />
+                    <!-- Performance: Native lazy loading and async decoding to defer off-screen images -->
+                    <img loading="lazy" decoding="async" src={servicio.img} alt="Character" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale-[40%] pointer-events-none z-0" />
                     <div class="relative z-10 flex justify-between items-start border-b-2 border-[#0a0b0d]/80 pb-1 mb-1 sm:mb-2">
                        <div class="flex flex-col">
                          <span class="text-[#0a0b0d] font-black text-xs sm:text-sm md:text-base leading-none uppercase tracking-tighter" style={`color: ${servicio.color}; text-shadow: 1px 1px 0px #e3dfd5;`}>{servicio.titulo.split('_')[0]}</span>
@@ -124,7 +125,8 @@ const servicios = [
               <div class="box-front absolute inset-0 bg-[#13151a] border-r-2 border-b-2 border-[#e3dfd5]/20 overflow-hidden z-20 pointer-events-none">
                  <div class="absolute inset-0 opacity-40 mix-blend-luminosity grayscale">
                     <div class="w-full h-full bg-[#13151a]" style={`background-image: radial-gradient(circle at center, ${servicio.color}40, transparent)`}></div>
-                    <img src={servicio.img} alt="Cover" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-50" />
+                    <!-- Performance: Native lazy loading and async decoding to defer off-screen images -->
+                    <img loading="lazy" decoding="async" src={servicio.img} alt="Cover" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-50" />
                  </div>
                  <div class="absolute inset-0 bg-[radial-gradient(#0a0b0d_1px,transparent_1px)] [background-size:4px_4px] opacity-60"></div>
                  <div class="absolute inset-0 mix-blend-multiply opacity-80" style={`background-color: ${servicio.color};`}></div>
@@ -229,7 +231,8 @@ const servicios = [
                   <div class="absolute bottom-1.5 left-1.5 w-2 h-2 rounded-full bg-[#0a0b0d] flex items-center justify-center border border-[#e3dfd5]/10 z-20"><div class="w-full h-[1px] bg-[#e3dfd5]/30 transform rotate-90"></div></div>
                   <div class="absolute bottom-1.5 right-1.5 w-2 h-2 rounded-full bg-[#0a0b0d] flex items-center justify-center border border-[#e3dfd5]/10 z-20"><div class="w-full h-[1px] bg-[#e3dfd5]/30 transform rotate-[120deg]"></div></div>
                   <div class="absolute top-[12%] bottom-[22%] left-[12%] right-[12%] bg-[#e3dfd5] rounded-sm z-10 flex flex-col p-1.5 sm:p-2 md:p-3 border border-[#e3dfd5]/50 shadow-inner overflow-hidden">
-                    <img src={servicio.img} alt="Character" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale-[40%] pointer-events-none z-0" />
+                    <!-- Performance: Native lazy loading and async decoding to defer off-screen images -->
+                    <img loading="lazy" decoding="async" src={servicio.img} alt="Character" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale-[40%] pointer-events-none z-0" />
                     <div class="relative z-10 flex justify-between items-start border-b-2 border-[#0a0b0d]/80 pb-1 mb-1 sm:mb-2">
                        <div class="flex flex-col">
                          <span class="text-[#0a0b0d] font-black text-xs sm:text-sm md:text-base leading-none uppercase tracking-tighter" style={`color: ${servicio.color}; text-shadow: 1px 1px 0px #e3dfd5;`}>{servicio.titulo.split('_')[0]}</span>
@@ -261,7 +264,8 @@ const servicios = [
               <div class="box-front absolute inset-0 bg-[#13151a] border-r-2 border-b-2 border-[#e3dfd5]/20 overflow-hidden z-20 pointer-events-none">
                  <div class="absolute inset-0 opacity-40 mix-blend-luminosity grayscale">
                     <div class="w-full h-full bg-[#13151a]" style={`background-image: radial-gradient(circle at center, ${servicio.color}40, transparent)`}></div>
-                    <img src={servicio.img} alt="Cover" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-50" />
+                    <!-- Performance: Native lazy loading and async decoding to defer off-screen images -->
+                    <img loading="lazy" decoding="async" src={servicio.img} alt="Cover" class="absolute inset-0 w-full h-full object-cover mix-blend-screen opacity-50" />
                  </div>
                  <div class="absolute inset-0 bg-[radial-gradient(#0a0b0d_1px,transparent_1px)] [background-size:4px_4px] opacity-60"></div>
                  <div class="absolute inset-0 mix-blend-multiply opacity-80" style={`background-color: ${servicio.color};`}></div>

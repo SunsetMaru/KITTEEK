@@ -40,7 +40,8 @@ const team = [
         <article class="group relative bg-[#13151a] border-2 border-[#e3dfd5] p-1.5 hover:border-[#ff7300] transition-colors duration-300 shadow-[4px_4px_0px_#ff7300]">
           
           <div class="w-full bg-[#0a0b0d] aspect-square overflow-hidden border border-[#6e7582]/40 relative">
-            <img 
+            <!-- Performance: Native lazy loading and async decoding to defer off-screen images -->
+            <img loading="lazy" decoding="async"
               src={member.img} 
               alt={member.name} 
               class="w-full h-full object-cover filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
