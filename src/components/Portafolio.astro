@@ -330,7 +330,6 @@ const proyectos = [
     const modalWrapper = document.getElementById('project-modal');
     const backdrop = document.getElementById('project-modal-backdrop');
     const cards = document.querySelectorAll('.js-project-card');
-    const modalContents = document.querySelectorAll('.js-modal-content');
     const closeBtns = document.querySelectorAll('.js-close-modal-btn');
     
     let activeModalContent: HTMLElement | null = null;
@@ -441,8 +440,6 @@ const proyectos = [
     const pdfContainer = document.getElementById('pdf-container');
     const pagesWrapper = document.getElementById('pdf-pages-wrapper');
     const loader = document.getElementById('pdf-loader');
-    
-    let currentPdfDoc: any = null;
 
     const renderAllPages = async (pdfDoc: any) => {
       if (!pagesWrapper || !pdfContainer) return;
@@ -492,7 +489,6 @@ const proyectos = [
           `;
 
           pdfjsLib.getDocument(pdfUrl).promise.then((pdfDoc: any) => {
-            currentPdfDoc = pdfDoc;
             loader.classList.add('hidden'); 
             renderAllPages(pdfDoc);
           }).catch((err: any) => {
@@ -511,7 +507,6 @@ const proyectos = [
           modalPdf.classList.add('hidden');
           modalPdf.classList.remove('flex');
           if(pagesWrapper) pagesWrapper.innerHTML = ''; 
-          currentPdfDoc = null;
         }, 300);
       });
     }
